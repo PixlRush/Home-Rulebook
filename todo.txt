@@ -1,4 +1,13 @@
 --== TODO ==--
+./Core/Gameplay/gameplay.tex:1:% TODO: Write Section
+./Core/Gameplay/hand.tex:1:% TODO: Write Section
+./Core/Gameplay/hanchan.tex:1:% TODO: Write Section
+./Core/Scoring/bonus.tex:1:% TODO: Write Section
+./Core/Scoring/scoring.tex:1:% TODO: Write Section
+./Core/Scoring/yaku.tex:1:% TODO: Write Section
+./Core/Equipment/sticks.tex:1:% TODO: Write section
+./Core/Equipment/tiles.tex:1:% TODO: Write section
+./Core/Equipment/other.tex:1:% TODO: Write section
 
 --== IN-PROGRESS ==--
 

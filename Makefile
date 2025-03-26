@@ -9,6 +9,8 @@ all: $(PDF-TARGETS) clean
 clean:
 	@echo "\n--==Cleaning Up==--\n"
 	latexmk -quiet -C
+	@if [[ -f main.glo || -f main.gls || -f main.glg ]]; then rm main.gl*; echo 'gloss'; rm main.ist; fi
+	@if [ -f ./version.tex ]; then rm ./version.tex; fi
 
 # Purge all
 purge:
@@ -18,14 +20,20 @@ purge:
 	@# Call down to purge voice-lines
 	@for MFILE in $(VOICE-TARGETS); do echo "\n-=Purging $$MFILE=-\n"; make -C $${MFILE%/*} purge; done
 
+version.tex:
+	@./versioning.sh > version.tex
+
 # Compiled PDF creation
-Compiled/Full.pdf: main.tex comp.tex preamble.tex title.tex $(shell find . -name "*.tex" | grep "N./.*\.tex")
+Compiled/Full.pdf: main.tex comp.tex preamble.tex title.tex version.tex $(shell find . -name "*.tex")
 	@echo "\n--==Compiling $@==--\n"
 	latexmk -f -xelatex -interaction=nonstopmode -quiet --shell-escape -synctex=1 $<
+	if [[ -f main.glo || -f main.gls || -f main.glg ]]; then makeglossaries main && \
+	latexmk -f -xelatex -interaction=nonstopmode -quiet --shell-escape -synctex=1 $<; \
+	rm main.gl*; echo 'gloss'; rm main.ist; fi
 	mv main.pdf $@
 
 # Generalized PDF Creation
-Compiled/%.pdf: %/main.tex preamble.tex title.tex $(shell find ./$(%) -name "*.tex")
+Compiled/%.pdf: %/main.tex %/comp.tex preamble.tex title.tex version.tex %/*.tex %/*/*.tex
 	@echo "\n--==Compiling $@==--\n"
 	latexmk -f -xelatex -interaction=nonstopmode -quiet -synctex=1 $<
 	mv main.pdf $@

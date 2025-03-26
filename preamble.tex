@@ -1,16 +1,33 @@
-\documentclass{book}
+\documentclass{article}
 
-\usepackage[margin=0.5in, 
+\usepackage[includehead,
+			margin=0.5in, 
 			paperwidth=5.5in, 
 			paperheight=8.5in
 		   ]{geometry}
 \setlength{\parskip}{6pt}
-% Control the space between columns of the table
-\setlength{\tabcolsep}{2pt}
 
+% Table Controllers
+\usepackage{tabulary, multirow, makecell, float}
+\setlength{\tabcolsep}{2pt}        % Space between Columns
+
+% Support for Japanese Text
+\usepackage{xeCJK, ruby}
+\setCJKmainfont{Toppan Bunkyu Mincho}
+\newCJKfontfamily\cjkbf{Toppan Bunkyu Midashi Mincho}
+\renewcommand{\rubysep}{0ex}
+
+% Support for loading images
+\usepackage{graphicx}
+
+% Misc Imports
+\usepackage[hidelinks]{hyperref}
+\usepackage{wrapfig}
 \usepackage{glossaries}
+\makeglossaries
+\usepackage{mahjong}
 
 % Set up generic titling
-\renewcommand\title{Mahjong Rules}
-\newcommand\subtitle{Basic Ari Ari Rules}
+\renewcommand\title{}
+\newcommand\subtitle{}
 \renewcommand\author{Matthew Rappaport}

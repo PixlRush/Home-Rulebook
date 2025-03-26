@@ -27,6 +27,31 @@
 \makeglossaries
 \usepackage{mahjong}
 
+% Set up command for Yaku
+\def\rulesetprefix{undef}
+\newcommand{\yaku}[5]{
+	\def\e{}\def\t{#4}
+	% #1 - Romaji Name
+	% #2 - English Name
+	% #3 - Japanese Name
+	% #4 - Flags for the Yaku
+	% #5 - Description of the Yaku
+	\subsubsection*{\large #1~--~{\cjkbf #3} {\normalfont\itshape\normalsize``#2''\/}}\label{\rulesetprefix:yaku:#1}
+	\vspace*{-12pt}
+	\ifx\e\t\else \textit{\footnotesize #4\\} \fi
+	\hspace*{\parindent}#5
+}
+
+% Useful Symbols
+\def\symbnegate{\( \times \)}
+\def\symbalert{\( !!\; \)}
+\def\closedhand{\symbalert Closed Hand Only}
+\def\brokenhand{\symbnegate Broken by Chii, Pon, or Kan calls}
+\def\morevaluable{\( + \)}
+\def\lessvaluable{\( - \)}
+\def\upgradesto{\( \leftarrow \)}
+\def\upgradesfrom{\( \rightarrow \)}
+
 % Set up generic titling
 \renewcommand\title{}
 \newcommand\subtitle{}

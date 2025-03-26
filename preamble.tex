@@ -29,18 +29,22 @@
 
 % Set up command for Yaku
 \def\rulesetprefix{undef}
-\newcommand{\yaku}[5]{
+% Generic command to be wrapped
+\newcommand{\ruleentry}[6]{
 	\def\e{}\def\t{#4}
 	% #1 - Romaji Name
 	% #2 - English Name
 	% #3 - Japanese Name
 	% #4 - Flags for the Yaku
 	% #5 - Description of the Yaku
-	\subsubsection*{\large #1~--~{\cjkbf #3} {\normalfont\itshape\normalsize``#2''\/}}\label{\rulesetprefix:yaku:#1}
+	\subsubsection*{\large #1~--~{\cjkbf #3} {\normalfont\itshape\normalsize``#2''\/}}\label{\rulesetprefix:#6:#1}
 	\vspace*{-12pt}
 	\ifx\e\t\else \textit{\footnotesize #4\\} \fi
 	\hspace*{\parindent}#5
 }
+% Rule item wrappers
+\newcommand{\yaku}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{yaku}}
+\newcommand{\bonus}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{bonus}}
 
 % Useful Symbols
 \def\symbnegate{\( \times \)}
@@ -51,6 +55,8 @@
 \def\lessvaluable{\( - \)}
 \def\upgradesto{\( \leftarrow \)}
 \def\upgradesfrom{\( \rightarrow \)}
+\def\upgradestoother{\( \Leftarrow \)}
+\def\upgradesfromother{\( \Rightarrow \)}
 
 % Set up generic titling
 \renewcommand\title{}

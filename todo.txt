@@ -4,7 +4,6 @@
 ./Core/Gameplay/hanchan.tex:1:% TODO: Write Section
 ./Core/Scoring/bonus.tex:6:% TODO: Link to procedure for dora
 ./Core/Scoring/bonus.tex:21:% TODO: Link to procedure for Honba
-./Core/Scoring/yaku.tex:227:% TODO: Is Suuankou a closed hand?
 ./Core/Equipment/sticks.tex:1:% TODO: Write section
 ./Core/Equipment/tiles.tex:1:% TODO: Write section
 ./Core/Equipment/other.tex:1:% TODO: Write section
@@ -15,5 +14,6 @@
 --== REVIEW ==--
 ./Core/Scoring/bonus.tex:1:% REVIEW: Write Section
 ./Core/Scoring/yaku.tex:1:% REVIEW: Yaku Contents
+./Core/Scoring/yaku.tex:227:% REVIEW: Is Suuankou a closed hand?
 
 --== DONE ==--

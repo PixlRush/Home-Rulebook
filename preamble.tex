@@ -50,6 +50,10 @@
 \newcommand{\yaku}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{yaku}}
 \newcommand{\bonus}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{bonus}}
 
+% Referencer Wrapper
+\newcommand{\pr}[2]{\textit{(p\pageref{\rulesetprefix:#1:#2})}}
+\newcommand{\prs}[3]{\textit{(p\pageref{\rulesetprefix:#1:#2}/\pageref{\rulesetprefix:#1:#3})}}
+
 % Useful Symbols
 \def\symbnegate{\( \times \)}
 \def\symbalert{\( !!\; \)}

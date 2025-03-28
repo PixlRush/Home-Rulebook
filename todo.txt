@@ -10,13 +10,13 @@
 ./Core/Equipment/other.tex:1:% TODO: Write section
 
 --== IN-PROGRESS ==--
-./Core/Scoring/scoring.tex:1:% IN-PROGRESS: Write Section
 
 --== REVIEW ==--
 ./Core/Scoring/bonus.tex:1:% REVIEW: Write Section
 ./Core/Scoring/fu.tex:1:% REVIEW: Write Section
 ./Core/Scoring/fu.tex:27:% REVIEW: Jantou instead of Toitsu?
 ./Core/Scoring/fu.tex:43:% REVIEW: Jantou instead of Toitsu?
+./Core/Scoring/scoring.tex:1:% REVIEW: Write Section
 ./Core/Scoring/yaku.tex:1:% REVIEW: Yaku Contents
 ./Core/Scoring/yaku.tex:229:% REVIEW: Is Suuankou a closed hand?
 

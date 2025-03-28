@@ -1,8 +1,35 @@
-% IN-PROGRESS: Write Section
+% REVIEW: Write Section
 \section{Scoring}\label{core:sec:scoring}
 
 \subsection{Paying out a Winning Hand}\label{core:sec:paying-hand}
 
+In order to pay out a winning hand, follow the following procedure:
+\begin{enumerate}
+	\item Count the Han earned from Yaku~\ref{core:sec:yaku}, and Bonuses~\ref{core:ssec:1-han-bonus}.
+	\item If that number is 4 or lower, count the Fu~\ref{core:sec:fu} the hand earns. Round that to the next 10, with the exception of hands winning with Chiitoitsu~\pr{yaku}{Chiitoitsu}, that hand is always worth 25 fu.
+\end{enumerate}
+
+After determining the Han, and if needed Fu, consult the table in Figure~\ref{core:fig:points} to determine the score. Taking into account Dealer or Non-dealer, Ron or Tsumo. Note that the third column is what is paid by all for a dealer Tsumo.
+
 \input{Core/Scoring/Resources/score-table.tex}
 
 \subsection{End of Game Scores}\label{core:sec:end-scores}
+
+At the end of the game, you will convert your scores to what will be called Match Points. Then you will apply bonuses and/or penalties based on your placement in the game. This gets the final match score that you will carry with you to your next game in the series.
+
+The procedure for doing it is as follows:
+\begin{enumerate}
+	\item Subtract your ending score from 30,000. This 30,000 is called the Return Score.
+	\item Then divide the resulting value by 1,000.
+	\item Then apply the Placement Bonus, also called Uma. In this case, it is \(+30/+10/-10/-30\).
+	\item Then apply the First Bonus, also called Oka. It is calculated as \(\frac{4\times(\text{Return Score} - \text{Start Score})}{1,000}\), in this ruleset that is \(+20\). As the name suggests, this applies only to first place.
+\end{enumerate}
+
+To give an example of the above procedure:
+\begin{itemize}
+	\item A game ended with the scoreline of: \\ \(41,300,\; 24,900,\; 21,800,\; 12,000\)
+	\item After paying back the return score it becomes: \\ \(11,300,\; \blacktriangle 5,100,\; \blacktriangle 8,200,\; \blacktriangle 18,000\)
+	\item Dividing by 1,000 becomes: \\ \(11.3, \; \blacktriangle 5.1, \; \blacktriangle 8.2, \; \blacktriangle 18.0\) 
+	\item Adding the Uma: \\ \(41.3, \; 4.9, \; \blacktriangle 18.2, \; \blacktriangle 48.0\) 
+	\item Then the Oka: \\ \(61.3, \; 4.9, \; \blacktriangle 18.2, \; \blacktriangle 48.0\) 
+\end{itemize}

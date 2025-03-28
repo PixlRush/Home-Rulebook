@@ -1,0 +1,114 @@
+% REVIEW: Write Section
+% TODO: Write Upgrade Chain
+\section{Fu}\label{core:sec:fu}
+
+\subsection{2 Fu}\label{core:ssec:2-fu}
+
+\fu{Pon}{Open Simples Triplet}{\ruby{中張牌}{チュウチャンパイ}\ruby{明刻}{みんこー}}
+	{}
+	{Have an Open Triplet of any non-orphan tile. }
+
+\fu{Isshu Machi}{Single Tile Wait}{\ruby{一種}{いっしゅ}\ruby{待}{ま}ち}
+	{\upgradesto A collective term for Tanki~Machi~\pr{fu}{Tanki Machi}, Penchan~Machi~\pr{fu}{Penchan Machi}, Kanchan~Machi~\pr{fu}{Kanchan Machi}}
+	{This is a name for a group of Fu giving shapes. Each of them ask for your wait to contain one and only one type of tile.}
+
+\fu{Tanki Machi}{Pair Wait}{\ruby{単騎}{たんき}\ruby{待}{ま}ち}
+	{\upgradesfrom A type of Isshu~Machi~\pr{fu}{Isshu Machi}}
+	{The block in your hand that was completed to win, was a single floating tile becoming a pair. For example, \mahjong{234234234m222p5m-5m}.}
+
+\fu{Penchan Machi}{Edge Wait}{\ruby{辺張}{ぺんちゃん}\ruby{待}{ま}ち}
+	{\upgradesfrom A type of Isshu~Machi~\pr{fu}{Isshu Machi}}
+	{The block in your hand that was completed to win was either a ``12'' or ``89'' block. For example, \mahjong{123m123789p77z12s-3s}.}
+
+\fu{Kanchan Machi}{Middle Wait}{\ruby{嵌張}{ぱんちゃん}\ruby{待}{ま}ち}
+	{\upgradesfrom A type of Isshu~Machi~\pr{fu}{Isshu Machi}}
+	{The block in your hand that was completed to win was a run waiting on its middle tile. For example, \mahjong{445566m456p77z46s-5s}.}
+
+% REVIEW: Jantou instead of Toitsu?
+\fu{Yakuhai Toitsu}{Valued Pair}{\ruby{役牌}{やくはい}\ruby{対子}{トイツ}}
+	{\upgradesto Upgrades to Renfuu~Toitsu~\pr{fu}{Renfuu Toitsu}}
+	{The pair in your hand is a tile that fits a Yakuhai Yaku~\pr{yaku}{Yakuhai}.}
+
+\fu{Tsumo}{Win by Self-Draw}{\ruby{自摸}{つも}\ruby{上}{あ}がり}
+	{}
+	{You win by drawing your winning tile from the wall.}
+
+\fu{Kuipinfu}{Open Pinfu}{\ruby{食}{く}い\ruby{平和}{ピンフ}}
+	{\symbalert Open Hand Only}
+	{Win a hand, that if it were closed, would qualify for the Pinfu yaku~\pr{yaku}{Pinfu}.}
+
+
+\subsection{4 Fu}\label{core:ssec:4-fu}
+
+% REVIEW: Jantou instead of Toitsu?
+\fu{Renfuu Toitsu}{Double Wind Pair}{\ruby{連風}{れんプー}\ruby{対子}{トイツ}}
+	{\upgradesfrom Upgrades from Yakuhai~Toitsu~\pr{fu}{Yakuhai Toitsu}}
+	{The pair in your hand is a tile that fits the Renfuu~Yaku~\pr{yaku}{Renfuu}.}
+
+\fu{Ankou}{Closed Simples Triplet}{\ruby{中張牌}{チュウチャンパイ}\ruby{暗刻}{あんこー}}
+	{}
+	{Have a Closed Triplet of any non-orphan tile.}
+
+\fu{Yaochuuhai Pon}{Open Orphan Triplet}{\ruby{幺九牌}{ヤオチューハイ}\ruby{明刻}{みんこー}}
+	{}
+	{Have an Open Triplet of any orphan tile.}
+
+
+\subsection{8 Fu}\label{core:ssec:8-fu}
+
+\fu{Yaochuuhai Ankou}{Closed Orphan Triplet}{\ruby{幺九牌}{ヤオチューハイ}\ruby{暗刻}{あんこー}}
+	{}
+	{Have a Closed Triplet of any orphan tile.}
+
+\fu{Kan}{Open Simples Quad}{\ruby{明槓}{みんかん}}
+	{}
+	{Have an Open Quad of any non-orphan tile.}
+
+
+\subsection{10 Fu}\label{core:ssec:10-fu}
+
+\fu{Menzen Ron}{Closed Ron}{\ruby{門前}{メンゼン}\ruby{出}{で}\ruby{上}{あ}がり}
+	{\closedhand \\
+	\upgradesfrom Stacks with Fuutei~\pr{fu}{Fuutei}}
+	{With a closed hand, win off of a discard.}
+
+
+\subsection{16 Fu}\label{core:ssec:16-fu}
+
+\fu{Ankan}{Closed Simples Quad}{\ruby{中張牌}{チュウチャンパイ}\ruby{暗槓}{あんかん}}
+	{}
+	{Have a Closed Quad of any non-orphan tile.}
+
+\fu{Yaochuuhai Kan}{Open Orphan Quad}{\ruby{幺九牌}{ヤオチューハイ}\ruby{明槓}{みんかん}}
+	{}
+	{Have an Open Quad of any orphan tile.}
+
+
+\subsection{20 Fu}\label{core:ssec:20-fu}
+
+\fu{Fuutei}{Base Fu}{\ruby{副底}{フーテイ}}
+	{\symbalert Always Applied \\
+	\upgradesto Stacks with Menzen~Ron~\pr{fu}{Menzen Ron}}
+	{Win a hand. This fu is almost always added to a winning hand.}
+
+\fu{Pindzumo}{Pinfu Tsumo}{\ruby{平和}{ピンフ}\ruby{自摸}{ツモ}\ruby{上}{あ}がり}
+	{\symbnegate Negates all other fu, including Fuutei~\pr{fu}{Fuutei} \\
+	\closedhand \\
+	\upgradesfromother Requires Pinfu~\pr{yaku}{Pinfu}}
+	{Win a closed Pinfu~\pr{yaku}{Pinfu} hand off a self draw.}
+
+
+\subsection{25 Fu}\label{core:ssec:25-fu}
+
+\fu{Chiitoitsu}{Seven Pairs}{\ruby{七対子}{チートイツ}}
+	{\symbnegate Negates all other fu, including Fuutei~\pr{fu}{Fuutei} \\
+	\closedhand \\
+	\upgradesfromother Is also a Yaku~\pr{yaku}{Chiitoitsu}}
+	{Win a hand that qualifies for Chiitoitsu~\pr{yaku}{Chiitoitsu}.}
+
+
+\subsection{32 Fu}\label{core:ssec:32-fu}
+
+\fu{Yaochuuhai Ankan}{Closed Orphan Quad}{\ruby{幺九牌}{ヤオチューハイ}\ruby{暗槓}{あんかん}}
+	{}
+	{Have a Closed Quad of any orphan tile.}

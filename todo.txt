@@ -1,7 +1,4 @@
 --== TODO ==--
-./Core/Gameplay/gameplay.tex:1:% TODO: Write Section
-./Core/Gameplay/hand.tex:1:% TODO: Write Section
-./Core/Gameplay/hanchan.tex:1:% TODO: Write Section
 ./Core/Scoring/bonus.tex:6:% TODO: Link to procedure for dora
 ./Core/Scoring/bonus.tex:21:% TODO: Link to procedure for Honba
 ./Core/Scoring/fu.tex:2:% TODO: Write Upgrade Chain
@@ -10,6 +7,9 @@
 ./Core/Equipment/other.tex:1:% TODO: Write section
 
 --== IN-PROGRESS ==--
+./Core/Gameplay/gameplay.tex:1:% IN-PROGRESS: Write Section
+./Core/Gameplay/hand.tex:1:% IN-PROGRESS: Write Section
+./Core/Gameplay/hanchan.tex:1:% IN-PROGRESS: Write Section
 
 --== REVIEW ==--
 ./Core/Scoring/bonus.tex:1:% REVIEW: Write Section

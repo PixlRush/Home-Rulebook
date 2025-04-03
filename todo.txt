@@ -1,7 +1,23 @@
 --== TODO ==--
+./Core/Gameplay/gameplay.tex:1:% TODO: Write Section
+./Core/Gameplay/hand.tex:1:% TODO: Write Section
+./Core/Gameplay/hanchan.tex:1:% TODO: Write Section
+./Core/Scoring/bonus.tex:6:% TODO: Link to procedure for dora
+./Core/Scoring/bonus.tex:21:% TODO: Link to procedure for Honba
+./Core/Scoring/fu.tex:2:% TODO: Write Upgrade Chain
+./Core/Equipment/sticks.tex:1:% TODO: Write section
+./Core/Equipment/tiles.tex:1:% TODO: Write section
+./Core/Equipment/other.tex:1:% TODO: Write section
 
 --== IN-PROGRESS ==--
 
 --== REVIEW ==--
+./Core/Scoring/bonus.tex:1:% REVIEW: Write Section
+./Core/Scoring/fu.tex:1:% REVIEW: Write Section
+./Core/Scoring/scoring.tex:1:% REVIEW: Write Section
+./Core/Scoring/yaku.tex:1:% REVIEW: Yaku Contents
+./Core/Scoring/yaku.tex:229:% REVIEW: Is Suuankou a closed hand?
 
 --== DONE ==--
+./Core/Scoring/fu.tex:27:% DONE: Jantou instead of Toitsu?
+./Core/Scoring/fu.tex:43:% DONE: Jantou instead of Toitsu?

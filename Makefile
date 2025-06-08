@@ -50,4 +50,7 @@ Compiled/Full.pdf: main.tex comp.tex preamble.tex title.tex version.tex $(shell 
 Compiled/%.pdf: %/main.tex %/comp.tex preamble.tex title.tex version.tex %/*.tex %/*/*.tex
 	@echo "\n--==Compiling $@==--\n"
 	latexmk -f -xelatex -interaction=nonstopmode -quiet -synctex=1 $<
+	if [[ -f main.glo || -f main.gls || -f main.glg ]]; then makeglossaries main && \
+	latexmk -f -xelatex -interaction=nonstopmode -quiet --shell-escape -synctex=1 $<; \
+	rm main.gl*; echo 'gloss'; rm main.ist; fi
 	mv main.pdf $@

@@ -8,9 +8,12 @@
 \setlength{\parskip}{6pt}
 
 % Table Controllers
-\usepackage{tabulary, multirow, makecell, float}
+\usepackage{tabulary, tabularx, multirow, makecell, float}
 \setlength{\tabcolsep}{2pt}        % Space between Columns
 % Special columns
+\newlength{\matchscorewidth}
+\setlength{\matchscorewidth}{0.7in}
+\newcolumntype{M}{>{\centering\arraybackslash}p{\matchscorewidth}}
 \newcolumntype{S}{>{\raggedleft\arraybackslash}p{0.5in}}
 \newcolumntype{H}{>{\centering\arraybackslash}p{0.25in}}
 \newcolumntype{F}{>{\centering\arraybackslash}p{0.25in}}
@@ -51,6 +54,7 @@
 \newcommand{\yaku}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{yaku}}
 \newcommand{\bonus}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{bonus}}
 \newcommand{\fu}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{fu}}
+\newcommand{\call}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{call}}
 
 % Referencer Wrapper
 \newcommand{\pr}[2]{\textit{(p\pageref{\rulesetprefix:#1:#2})}}
@@ -67,6 +71,8 @@
 \def\upgradesfrom{\( \rightarrow \)}
 \def\upgradestoother{\( \Leftarrow \)}
 \def\upgradesfromother{\( \Rightarrow \)}
+\def\minus{\blacktriangle}
+\def\mminus{$\blacktriangle$}
 
 % Set up generic titling
 \renewcommand\title{}

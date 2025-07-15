@@ -1,0 +1,60 @@
+% Store value of \arraystretch
+\def\temp{\arraystretch}
+\def\arraystretch{1.5}
+
+\clearpage
+\begin{figure}[h]\centering
+    \thispagestyle{empty}
+    \label{\rulesetprefix:fig:match}
+    \textbf{\Large \title\ Game Scoresheet}
+
+    \vspace{2em}
+
+    \noindent\begin{tabularx}{\textwidth}[c]{
+        >{\centering\arraybackslash\noindent}X
+        |M|M|M|M|}
+        \multicolumn{1}{c}{}
+        & \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{{\cjkbf 東家}}
+        & \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{{\cjkbf 南家}}
+        & \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{{\cjkbf 西家}}
+        & \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{{\cjkbf 北家}} \\
+        \multicolumn{5}{c}{}\\
+
+        \hline
+        Starting Score             & & & & \\\hline
+        \hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        {\hfill \handmarker} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} & {\hfill\deposit} \\\hline
+        \hline
+        Final Score                & & & & \\\cline{2-5}
+        Match Points               & & & & \\\cline{2-5}
+        Placement                  & & & & \\\cline{2-5}
+        \textbf{Total}             & & & & \\\hline
+    \end{tabularx}
+    \vspace{1em}
+
+    \textbf{Starting Score:} 25,000 \hspace*{1cm}
+    \textbf{Return Score:} 30,000 \\
+    \textbf{Uma:} +30/+10/\mminus10/\mminus30 \hspace*{1cm}
+    \textbf{Oka:} +20
+
+\label{core:fig:game}
+\end{figure}
+\clearpage
+
+% Restore arraystretch
+\def\arraystretch{\temp}

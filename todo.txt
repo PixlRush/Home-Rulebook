@@ -5,6 +5,7 @@
 ./Core/Scoring/bonus.tex:6:% TODO: Link to procedure for dora
 ./Core/Scoring/bonus.tex:21:% TODO: Link to procedure for Honba
 ./Core/Scoring/fu.tex:2:% TODO: Write Upgrade Chain
+./Core/Scoring/scoring.tex:41:% TODO: Write about the game scoresheet
 ./Core/Equipment/sticks.tex:1:% TODO: Write section
 ./Core/Equipment/tiles.tex:1:% TODO: Write section
 ./Core/Equipment/other.tex:1:% TODO: Write section

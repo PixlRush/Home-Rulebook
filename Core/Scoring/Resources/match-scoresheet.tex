@@ -1,60 +1,35 @@
-% Store value of \arraystretch
-\def\temp{\arraystretch}
-\def\arraystretch{1.5}
+\begin{mjgRecordSheet}{1.5}{0.7in}
+\label{\rulesetprefix:fig:match}
+\thispagestyle{empty}
+\mjgSetPlayers{}{}{}{}
+\mjgGameTitle{\title\ Scoresheet}
+\mjgMatchTable{
 
-\clearpage
-\begin{figure}[h]\centering
-    \thispagestyle{empty}
-    \label{\rulesetprefix:fig:match}
-    \textbf{\Large \title~Scoresheet}
+    \mjgMatchTableFirstGame
+    {&&&}
+    {&&&}
+    {&&&}
+    {&&&}
 
-    \vspace{2em}
+    \mjgMatchTableGame{Game 2}
+    {&&&}
+    {&&&}
+    {&&&}
+    {&&&}
+    {&&&}
 
-    \noindent\begin{tabularx}{\textwidth}[c]{
-        >{\centering\arraybackslash\noindent}X
-        |M|M|M|M
-        |c}
-        \multicolumn{1}{c}{}
-        & \multicolumn{1}{>{\centering\arraybackslash}m{0.7in}}{\textbf{Player 1}}
-        & \multicolumn{1}{>{\centering\arraybackslash}m{0.7in}}{\textbf{Player 2}}
-        & \multicolumn{1}{>{\centering\arraybackslash}m{0.7in}}{\textbf{Player 3}}
-        & \multicolumn{1}{>{\centering\arraybackslash}m{0.7in}}{\textbf{Player 4}} \\
-        \multicolumn{6}{c}{}\\
+    \mjgMatchTableGame{Game 3}
+    {&&&}
+    {&&&}
+    {&&&}
+    {&&&}
+    {&&&}
 
-        \hline
-        Raw Score                  & & & & & \multirow{4}{*}{\rotatebox{-90}{\textit{Game 1}}} \\\cline{2-5}
-        Match Points               & & & & & \\\cline{2-5}
-        Placement                  & & & & & \\\cline{2-5}
-        \textbf{Total}             & & & & & \\\hline\hline
-
-        Raw Score                  & & & & & \multirow{5}{*}{\rotatebox{-90}{\textit{Game 2}}} \\\cline{2-5}
-        Match Points               & & & & & \\\cline{2-5}
-        Placement                  & & & & & \\\cline{2-5}
-        Subtotal                   & & & & & \\\cline{2-5}
-        \textbf{Total}             & & & & & \\\hline\hline
-
-        Raw Score                  & & & & & \multirow{5}{*}{\rotatebox{-90}{\textit{Game 3}}} \\\cline{2-5}
-        Match Points               & & & & & \\\cline{2-5}
-        Placement                  & & & & & \\\cline{2-5}
-        Subtotal                   & & & & & \\\cline{2-5}
-        \textbf{Total}             & & & & & \\\hline\hline
-
-        Raw Score                  & & & & & \multirow{5}{*}{\rotatebox{-90}{\textit{Game 4}}} \\\cline{2-5}
-        Match Points               & & & & & \\\cline{2-5}
-        Placement                  & & & & & \\\cline{2-5}
-        Subtotal                   & & & & & \\\cline{2-5}
-        \textbf{Grand Total}       & & & & & \\\hline
-    \end{tabularx}
-    \vspace{1em}
-
-    \textbf{Starting Score:} 25,000 \hspace*{1cm}
-    \textbf{Return Score:} 30,000 \\
-    \textbf{Uma:} +30/+10/\mminus10/\mminus30 \hspace*{1cm}
-    \textbf{Oka:} +20
-
-\label{core:fig:match}
-\end{figure}
-\clearpage
-
-% Restore arraystretch
-\def\arraystretch{\temp}
+    \mjgMatchTableLastGame{Game 4}
+    {&&&}
+    {&&&}
+    {&&&}
+    {&&&}
+    {&&&}
+}
+\end{mjgRecordSheet}

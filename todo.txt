@@ -1,4 +1,6 @@
 --== TODO ==--
+./Core/Gameplay/gameplay.tex:78:% TODO: Ankan Example
+./Core/Gameplay/gameplay.tex:100:% TODO: Exhaustive Draw & End of Hand Procedure
 ./Core/Gameplay/hand.tex:2:% TODO: Make Diagrams
 ./Core/Gameplay/hanchan.tex:2:% TODO: Diagrams for draw methods?
 ./Core/Gameplay/hanchan.tex:9:% TODO: Bust Sticks?
@@ -12,6 +14,7 @@
 
 --== IN-PROGRESS ==--
 ./Core/Gameplay/gameplay.tex:1:% IN-PROGRESS: Write Section
+./Core/Gameplay/gameplay-old.tex:1:% IN-PROGRESS: Write Section
 
 --== REVIEW ==--
 ./Core/Gameplay/hand.tex:1:% REVIEW: Write Section

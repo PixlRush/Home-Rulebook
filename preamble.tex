@@ -20,8 +20,7 @@
 
 % Support for Japanese Text
 \usepackage{xeCJK, ruby}
-\setCJKmainfont{Toppan Bunkyu Mincho}
-\newCJKfontfamily\cjkbf{Toppan Bunkyu Midashi Mincho}
+\setCJKmainfont[BoldFont=Toppan Bunkyu Midashi Mincho]{Toppan Bunkyu Mincho}
 \renewcommand{\rubysep}{0ex}
 
 % Support for loading images
@@ -45,7 +44,7 @@
 	% #3 - Japanese Name
 	% #4 - Flags for the Yaku
 	% #5 - Description of the Yaku
-	\subsubsection*{\large #1~--~{\cjkbf #3} {\normalfont\itshape\normalsize``#2''\/}}\label{\rulesetprefix:#6:#1}
+	\subsubsection*{\large #1~--~\textbf{#3} {\normalfont\itshape\normalsize``#2''\/}}\label{\rulesetprefix:#6:#1}
 	\vspace*{-12pt}
 	\ifx\e\t\else \textit{\footnotesize #4\\} \fi
 	\hspace*{\parindent}#5
@@ -191,7 +190,6 @@
 	% Start Figure
 	\begin{figure}[h]
 	\centering
-	\thispagestyle{empty}
 	}
 	{
 	\end{figure}

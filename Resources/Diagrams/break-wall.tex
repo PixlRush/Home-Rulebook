@@ -1,0 +1,65 @@
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[scale=0.25]\centering
+	% Walls
+	\foreach \y in {0,-18.4}{
+		\foreach \x in {0,1,...,16}{
+			% horizontal walls
+			\draw (\x,\y) rectangle (\x+1,\y+1.4);
+			\fill [pattern=north east lines] (\x,\y) rectangle (\x+1,\y+1.4);
+			% vertical walls
+			\draw (-\y,-\x) rectangle (-\y-1.4,-\x-1);
+			\fill [pattern=north east lines] (-\y,-\x) rectangle (-\y-1.4,-\x-1);
+		}
+	}
+	% Numbers
+	\draw (8.5, -17) node [above] {$5, 9$};
+	\draw (17, -8.5) node [left] {$2, 6, 10$};
+	\draw (8.5, 0) node [below] {$3, 7, 11$};
+	\draw (0, -8.5) node [right] {$4, 8, 12$};
+	% Arrows
+	\draw [thick, ->] (8.5,-10.5) arc (270:585:2);
+
+
+	% SPLIT OF WALLS
+	\draw [->] (17.5, 0.5) -- (18.8, 1.8) -- node [midway, above] {$7$} (28.5,1.8) -- (28.5, 0.9);
+
+
+	% vertical walls
+	\foreach \y in {-0,-1,...,-16}{
+		\foreach \x in {21,39.4}{
+			\draw (\x-1.4,\y-1) rectangle (\x,\y);
+			\fill [pattern=north east lines] (\x-1.4,\y-1) rectangle (\x,\y);
+		}
+	}
+	% dealer wall
+	\foreach \x in {21, 22,...,37}{
+		\draw (\x+1,-18.4) rectangle (\x,-17);
+		\fill [pattern=north east lines] (\x+1,-18.4) rectangle (\x,-17);
+	}
+	% cut wall
+	\foreach \x in {21, 22,...,27, 29, 30,...,38}{
+		\draw (\x+1,+1.4) rectangle (\x,0);
+		\fill [pattern=north east lines] (\x+1,+1.4) rectangle (\x,0);
+	}
+
+	% % NW Corner
+	% \draw [red] (20,0) node {x};
+	% \draw [blue] (20,0) rectangle (21, 1.4);
+	% \draw [blue] (18.6,-1) rectangle (20,0);
+	% % NE Corner
+	% \draw [red] (37,0) node {x};
+	% \draw [blue] (36,0) rectangle (37, 1.4);
+	% \draw [blue] (38.4,-1) rectangle (37,0);
+	% % SW Corner
+	% \draw [red] (20,-17) node {x};
+	% \draw [blue] (20,-18.6) rectangle (21, -17);
+	% \draw [blue] (18.6,-16) rectangle (20,-17);
+	% % SE Corner
+	% \draw [red] (37,-17) node {x};
+	% \draw [blue] (36,-18.4) rectangle (37, -17);
+	% \draw [blue] (38.4,-16) rectangle (37,-17);
+\end{tikzpicture}
+\caption{A diagram showing how to break the wall properly.}
+\end{center}
+\end{figure}

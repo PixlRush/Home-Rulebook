@@ -26,6 +26,10 @@
 % Support for loading images
 \usepackage{graphicx}
 
+% Support for drawing diagrams
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
 % Misc Imports
 \usepackage[hidelinks]{hyperref}
 \usepackage{wrapfig}
@@ -73,8 +77,8 @@
 % Scoring Symbols
 \def\minus{\blacktriangle}
 \def\mminus{$\blacktriangle$}
-\def\handmarker{ 局　　本場}
-\def\deposit{\tiny 供託}
+\def\handmarker{-\hfill(\hspace{4ex})}
+\def\deposit{\tiny R}
 
 % Record Sheet Commands
 % Set Title for Pages
@@ -107,11 +111,16 @@
 	& \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{#3} \\
 }
 % Game Parameters
+\def\mjgSScore{25,000}
+\def\mjgRScore{30,000}
+\def\mjgUma{+30/+10/\mminus10/\mminus30}
+\def\mjgOka{+20}
+
 \newcommand{\mjgGameFooter}{
-    \textbf{Starting Score:} 25,000 \hspace*{1cm}
-    \textbf{Return Score:} 30,000 \\
-    \textbf{Uma:} +30/+10/\mminus10/\mminus30 \hspace*{1cm}
-    \textbf{Oka:} +20
+    \textbf{Starting Score:} \mjgSScore \hspace*{1cm}
+    \textbf{Return Score:} \mjgRScore \\
+    \textbf{Uma:} \mjgUma \hspace*{1cm}
+    \textbf{Oka:} \mjgOka
 }
 
 % Match Sheet
@@ -164,7 +173,7 @@
 		|M|M|M|M|}
 		\mjgHeaderRow{\textbf{East}}{\textbf{South}}{\textbf{West}}{\textbf{North}}
 		\mjgHeaderRow{\playerE}{\playerS}{\playerW}{\playerN}\hline
-        Starting Score & 25,000 & 25,000 & 25,000 & 25,000 \\\hline
+        Starting Score & \mjgSScore & \mjgSScore & \mjgSScore & \mjgSScore \\\hline
 		\hline
 		#1 % mjgTableBody
 		\\\hline\hline

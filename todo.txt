@@ -14,7 +14,6 @@
 
 --== IN-PROGRESS ==--
 ./Core/Gameplay/gameplay.tex:1:% IN-PROGRESS: Write Section
-./Core/Gameplay/gameplay-old.tex:1:% IN-PROGRESS: Write Section
 
 --== REVIEW ==--
 ./Core/Gameplay/hand.tex:1:% REVIEW: Write Section

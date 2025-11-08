@@ -58,10 +58,16 @@
 \newcommand{\bonus}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{bonus}}
 \newcommand{\fu}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{fu}}
 \newcommand{\call}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{call}}
+\newcommand{\decl}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{decl}}
+\newcommand{\equip}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{equip}}
 
 % Referencer Wrapper
 \newcommand{\pr}[2]{\textit{(p\pageref{\rulesetprefix:#1:#2})}}
-\newcommand{\prs}[3]{\textit{(p\pageref{\rulesetprefix:#1:#2}/\pageref{\rulesetprefix:#1:#3})}}
+\newcommand{\prs}[3]{\textit{(p\pageref{\rulesetprefix:#1:#2},~\pageref{\rulesetprefix:#1:#3})}}
+\newcommand{\prss}[4]{\textit{(p\pageref{\rulesetprefix:#1:#2},~\pageref{\rulesetprefix:#1:#3})},~\pageref{\rulesetprefix:#1:#4})}
+\newcommand{\ar}[2]{\textit{(\autoref{\rulesetprefix:#1:#2})}}
+\newcommand{\ars}[3]{\textit{(\autoref{\rulesetprefix:#1:#2}/\autoref{\rulesetprefix:#1:#3})}}
+\newcommand{\arss}[4]{\textit{(\autoref{\rulesetprefix:#1:#2},~\autoref{\rulesetprefix:#1:#3})},~\autoref{\rulesetprefix:#1:#4})}
 
 % Useful Symbols
 \def\symbnegate{\( \times \)}

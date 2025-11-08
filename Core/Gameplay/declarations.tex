@@ -1,0 +1,39 @@
+% REVIEW: Write Section
+\section{Declarations}\label{core:sec:declarations}
+
+\subsection{Declaring Riichi}\label{core:ssec:declaring-riichi}
+
+% DONE: Ankan Example
+\decl{Riichi}{Riichi}{リーチ}
+	{\symbalert Ready hand required\\
+	\symbalert Furiten~\pr{sssec}{furiten} is permanent\\
+	\closedhand}
+	{On your turn, just before you discard, if your hand is ready -- that is it has one or more tiles that complete it -- you may say ``Riichi.'' After which, discard a tile from your hand sideways. If no one declares a win on that tile, wager a 1,000 point stick in the middle of the table.
+
+	For the rest of your hand, you may only discard the tile you draw, declare Ron \pr{decl}{Ron}, declare Tsumo \pr{decl}{Tsumo}, or call an Ankan using the tile you just drew \pr{call}{Ankan}. When you call an Ankan, it may not cause the structure or wait of your hand to change.
+
+	For example, in this hand: {\mahjong{123456789p1113s}}, you can not call an Ankan if you draw the {\mahjong{1s}}. This is because it changes the wait from {\mahjong{23s}} to \emph{only} {\mahjong{3s}}. This is true \emph{also} for this hand: {\mahjong{123456p1113sX22Xs}}. Even though the wait does not change -- \textit{(there are only four copies of a tile)} -- the structure of your hand does change, making this Ankan illegal.
+
+	When you declare a win, for every dora indicator, reveal the tile underneath it as an ura dora indicator.}
+
+\subsection{Declaring a Win}\label{core:ssec:declaring-a-win}
+
+\decl{Ron}{Ron}{ロン}
+	{\symbalert Requires at least one yaku \pr{sec}{yaku}\\
+	\symbnegate Negated by Furiten \pr{sssec}{furiten}}
+	{As a tile is discarded that completes your hand, if you are not Furiten, you may declare ``Ron,'' reveal your entire hand, tally the score as described in the section on Paying out a Winning Hand \pr{ssec}{paying-hand}, then the hand ends. Multiple players may declare Ron on the same tile.}
+
+\decl{Tsumo}{Tsumo}{\ruby{自摸}{ツモ}}
+	{\symbalert Requires at least one yaku \pr{sec}{yaku}}
+	{As you draw a tile that completes a hand, you may delcare ``Tsumo,'' set the winning tile to the side of your hand, reveal your entire hand, tally the score as described in the section on Paying out a Winning Hand \pr{ssec}{paying-hand}, then the hand ends.}
+
+\subsubsection{Furiten}\label{core:sssec:furiten}
+
+Furiten is a rule which restricts you from declaring Ron. It is based off of two fundamental ideals: You can't choose who you win off of, and you can't throw away a win and still be able to win off someone else. They have become the following rules:
+\begin{enumerate}
+	\item Should a tile be discarded that is in the wait of your hand, and you do not declare Ron on it, you may not declare Ron until you next discard a tile.
+	\begin{enumerate}
+		\item If you have declared Riichi this hand, you may not declare Ron until the start of the next hand.
+	\end{enumerate}
+	\item While a tile in your discards is also in your wait, you may not declare Ron.
+\end{enumerate}

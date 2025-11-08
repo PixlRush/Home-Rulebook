@@ -1,0 +1,46 @@
+% REVIEW: Write Section
+% TODO: Kuikae
+\section{Calls}\label{core:sec:calls}
+
+\subsection{From the Discards}\label{core:ssec:discards}
+
+\call{Chii}{Chii}{チー}
+	{\symbalert May only be done from the player to your left\\
+	\symbnegate Superceded by Pon \pr{call}{Pon}, Kan \pr{call}{Kan}, and Ron \pr{decl}{Ron}\\
+	\symbnegate May not be done while there are no tiles left in the live wall}
+	{As the player to your left discards a tile, you may say ``Chii,'' reveal two tiles in your hand that form a run with the discarded tile, meld them, then discard a tile. See below for examples of Chiis.
+	\begin{center}These look weird, but are right: {\mahjong{3'24m}\hspace{0.2cm}\mahjong{4'23p}\hspace{0.2cm}\mahjong{2'34s}}\end{center}}
+
+\call{Pon}{Pon}{ポン}
+	{\symbnegate Superceded by Ron \pr{decl}{Ron}\\
+	\symbnegate May not be done while there are no tiles left in the live wall\\
+	\upgradesto Upgrades into Kakan \pr{call}{Kakan}}
+	{As any player discards a tile, you may say ``Pon,'' reveal two tiles in your hand that form a set with the discarded tile, meld them, then discard a tile. Please ensure the tile you grab and rotated sideways is placed correctly for where you got it from. See examples of Pons below.
+	\begin{center}{From the player on your left: \mahjong{5'55m}\\ From the player across from you: \mahjong{05'5p}\\ From the player to your right: \mahjong{550's}}\end{center}}
+
+\call{Kan}{Kan}{\ruby{明}{みん}\ruby{槓}{カン}}
+	{\symbnegate Superceded by Ron \pr{decl}{Ron}\\
+	\symbnegate May not be done while there are no tiles left in the live wall\\
+	\upgradestoother Enables Rinshan Kaihou \pr{yaku}{Rinshan Kaihou}}
+	{As any player discards a tile, you may say ``Kan,'' reveal three tiles in your hand that form a set with the discarded tile, meld them, draw a tile from the dead wall, reveal a new Dora indicator, then discard a tile. Please ensure the tile you grab and rotated sideways is placed correctly for where you got it from. See examples of Kans below.
+	\begin{center}{From the player on your left: \mahjong{5'505m}\\ From the player across from you: \mahjong{05'55p}/\mahjong{055'5p}\\ From the player to your right: \mahjong{5550's}}\end{center}}
+
+\subsection{After Drawing}\label{core:ssec:drawn}
+
+However, there are three types of Kans. The other two are able to be performed only on your turn after drawing a tile.
+
+\call{Kakan}{Upgraded Kan}{\ruby{加}{か}\ruby{槓}{カン}}
+	{\symbnegate May not be done while there are no tiles left in the live wall\\
+	\upgradesfrom Upgrades from Pon \pr{call}{Pon}\\
+	\upgradestoother Enables Rinshan Kaihou \pr{yaku}{Rinshan Kaihou}\\
+	\upgradestoother Enables Chankan \pr{yaku}{Chankan}}
+	{After you have drawn a tile, if you have a Pon of some tile, and have the fourth tile of that type in your hand, you may say ``Kan.'' Reveal that tile in your hand, place it sideways above the other sideways tile melding it, draw a tile from the dead wall, reveal a new Dora indicator, then discard a tile.
+	\begin{center}{From the player on your left: \mahjong{5'05m}$\;\rightarrow\;$\mahjong{5"05m}\\ From the player across from you: \mahjong{05'5p}$\;\rightarrow\;$\mahjong{05"5p}\\ From the player to your right: \mahjong{505's}$\;\rightarrow\;$\mahjong{505"s}}\end{center}}
+
+\call{Ankan}{Closed Kan}{\ruby{暗}{あん}\ruby{槓}{カン}}
+	{\symbalert Does not open your hand\\
+	\symbnegate May not be done while there are no tiles left in the live wall\\
+	\upgradestoother Enables Rinshan Kaihou \pr{yaku}{Rinshan Kaihou}\\
+	\upgradestoother Enables Chankan for Thirteen Orphans only \pr{yaku}{Chankan}}
+	{After you have drawn a tile, if you have four copies of a tile in your hand, you may say ``Kan.'' Reveal all of those tiles, flip the outer two face down, melding it, draw a tile from the dead wall, reveal a new Dora indicator, then discard a tile.
+	\begin{center}{\mahjong{6666z}$\;\rightarrow\;$\mahjong{X66Xz}}\end{center}}

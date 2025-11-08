@@ -1,100 +1,59 @@
-% IN-PROGRESS: Write Section
+% REVIEW: Write Section
 \section{Gameplay}\label{core:sec:gameplay}
 
-After the dealer has drawn their fourteenth tile, the game begins. Players will take turns in counterclockwise order drawing and discarding tiles until one of two things happens. Either a player makes a winning hand \prs{call}{Ron}{Tsumo}, or the live wall runs out of tiles \pr{ssec}{exhaustive-draw}.
+After everyone has their starting hands, we may begin playing the game. The Dealer will take the first turn.
 
-After a tile is discarded, players may call for it melding two or more tiles from their hand, players may also declare that they win on it \pr{call}{Ron} revealing their hand in the process. Should no one wish to do so, the next player will start their turn by drawing a tile. Typically the next player should wait a second for calls or declarations before drawing their next tile.
+\subsection{Draw a Tile}\label{core:ssec:draw-a-tile}
 
-Ths rough outline is expanded upon below.
+Take the most counter-clockwise tile remaining in the live wall and add it to your hand. 
 
-\subsection{Taking a Turn}\label{core:ssec:taking-a-turn}
+% TODO: Diagrams?
+When you draw a tile, ensure it does not get incorporated or sorted into your hand. This is important because players must be able to determine if the tile you discard is the one you just drew or not. You may leave a small gap between your hand and the tile you just drew, leave it sideways next to your hand, or you may place it sideways on top of your hand. All that matters is you do not incorporate it into your hand until after you discard a tile.
 
-To start your turn off, you will draw a tile from the live wall. After which, you may perform a number of actions detailed below, then discard a tile. At this point, players may call that tile for melding things or winning the game, then the player to your left will start their turn. If there are no tiles left in the live wall, proceed to Exhaustive Draw \pr{ssec}{exhaustive-draw}.
+\subsection{You Make Calls / Declarations}\label{core:ssec:you-call-declare}
 
-\subsection{Calling for a Tile}\label{core:ssec:calling-for-tiles}
+This is the time in which you may make calls and declarations that happen on your turn. The available calls are: Kakan~\pr{call}{Kakan}, and Ankan~\pr{call}{Ankan}. The available declarations are: Tsumo~\pr{decl}{Tsumo}, and Riichi~\pr{decl}{Riichi}.
 
-As a tile is discarded, players may call for it to meld it with two, sometimes three, other tiles in their hands. All of these calls are superceded by any winning declaration \pr{ssec}{declaring-a-win}. The procedure for making a call is as follows: Clearly say the type of call you wish to perform, reveal the tiles from your hand you wish to meld it with, grab the tile and construct the meld, then discard a tile from your hand. Play will continue from the player after you.
+If you declare Riichi at this time, you must move directly to the next step and discard a tile.
 
-Constructing a meld will also carry some information with it, the tile you take will be rotated sideways. This is very important to keep track of for the rule of Furiten \pr{ssec}{furiten}. Where in the meld the rotated tile is, encodes who you got the tile from. On the left for the player on your left, on your right from the player on your right, and in the middle for the player across from you.
+\subsection{Discard}\label{core:ssec:discard}
 
-Examples of this will be shown in each call.
+Choose any tile in your hand, and discard it into your discards in front of you.
 
-\call{Chii}{Chii}{チー}
-	{\symbalert May only be done from the player to your left\\
-	\symbnegate Superceded by Pon \pr{call}{Pon}, Kan \pr{call}{Kan}, and Ron \pr{call}{Ron}\\
-	\symbnegate May not be done while there are no tiles left in the live wall}
-	{As the player to your left discards a tile, you may say ``Chii,'' reveal two tiles in your hand that form a run with the discarded tile, meld them, then discard a tile. See below for examples of Chiis.
-	\begin{center}These look weird, but are right: {\mahjong{3'24m}\hspace{0.2cm}\mahjong{4'23p}\hspace{0.2cm}\mahjong{2'34s}}\end{center}}
+% TODO: Diagram?
+You should be keeping your discards in orderly rows no more than six tiles long. If you would discard a seventh tile in a row, instead start a new row below it. If you would make your nineteenth or higher discard, you may either extend your third row or start a new fourth row, this is up to you.
 
-\call{Pon}{Pon}{ポン}
-	{\symbnegate Superceded by Ron \pr{call}{Ron}\\
-	\symbnegate May not be done while there are no tiles left in the live wall\\
-	\upgradesto Upgrades into Kakan \pr{call}{Kakan}}
-	{As any player discards a tile, you may say ``Pon,'' reveal two tiles in your hand that form a set with the discarded tile, meld them, then discard a tile. Please ensure the tile you grab and rotated sideways is placed correctly for where you got it from. See examples of Pons below.
-	\begin{center}{From the player on your left: \mahjong{5'55m}\\ From the player across from you: \mahjong{05'5p}\\ From the player to your right: \mahjong{550's}}\end{center}}
+\subsection{Others Make Calls / Declarations}\label{core:ssec:others-call-declare}
 
-\call{Kan}{Kan}{\ruby{明}{みん}\ruby{槓}{カン}}
-	{\symbnegate Superceded by Ron \pr{call}{Ron}\\
-	\symbnegate May not be done while there are no tiles left in the live wall\\
-	\upgradestoother Enables Rinshan Kaihou \pr{yaku}{Rinshan Kaihou}}
-	{As any player discards a tile, you may say ``Kan,'' reveal three tiles in your hand that form a set with the discarded tile, meld them, draw a tile from the dead wall, reveal a new Dora indicator, then discard a tile. Please ensure the tile you grab and rotated sideways is placed correctly for where you got it from. See examples of Kans below.
-	\begin{center}{From the player on your left: \mahjong{5'505m}\\ From the player across from you: \mahjong{05'55p}/\mahjong{055'5p}\\ From the player to your right: \mahjong{5550's}}\end{center}}
+After you discard a tile and before the next player draws their tile, everyone else will have a chance to make calls with that tile or declare a win on that tile.
 
-However, there are three types of Kans. The other two are able to be performed only on your turn after drawing a tile.
+There are a few things of note for making calls this way: While there are no tiles left in the live wall, calls may not be made during this step. After a call is made, it will be the calling player's turn and they will continue from the appropriate step, typically Discard.
 
-\call{Kakan}{Upgraded Kan}{\ruby{加}{か}\ruby{槓}{カン}}
-	{\symbnegate May not be done while there are no tiles left in the live wall\\
-	\upgradesfrom Upgrades from Pon \pr{call}{Pon}\\
-	\upgradestoother Enables Rinshan Kaihou \pr{yaku}{Rinshan Kaihou}\\
-	\upgradestoother Enables Chankan \pr{yaku}{Chankan}}
-	{After you have drawn a tile, if you have a Pon of some tile, and have the fourth tile of that type in your hand, you may say ``Kan.'' Reveal that tile in your hand, place it sideways above the other sideways tile melding it, draw a tile from the dead wall, reveal a new Dora indicator, then discard a tile.
-	\begin{center}{From the player on your left: \mahjong{5'05m}$\;\rightarrow\;$\mahjong{5"05m}\\ From the player across from you: \mahjong{05'5p}$\;\rightarrow\;$\mahjong{05"5p}\\ From the player to your right: \mahjong{505's}$\;\rightarrow\;$\mahjong{505"s}}\end{center}}
+A tile discarded can only be claimed by \emph{one} call or declaration. If more than one person wants that tile, there is a priority to determine who actually gets it. It is: Ron~\pr{decl}{Ron} \(\rightarrow\) Kan~\pr{call}{Kan}/Pon~\pr{call}{Pon} \(\rightarrow\) Chii~\pr{call}{Chii}.
 
-\call{Ankan}{Closed Kan}{\ruby{暗}{あん}\ruby{槓}{カン}}
-	{\symbalert Does not open your hand\\
-	\symbnegate May not be done while there are no tiles left in the live wall\\
-	\upgradestoother Enables Rinshan Kaihou \pr{yaku}{Rinshan Kaihou}\\
-	\upgradestoother Enables Chankan for Thirteen Orphans only \pr{yaku}{Chankan}}
-	{After you have drawn a tile, if you have four copies of a tile in your hand, you may say ``Kan.'' Reveal all of those tiles, flip the outer two face down, melding it, draw a tile from the dead wall, reveal a new Dora indicator, then discard a tile.
-	\begin{center}{\mahjong{6666z}$\;\rightarrow\;$\mahjong{X66Xz}}\end{center}}
+In the case where more than one player wants to declare Ron, the player closest to the discarder in turn order gets to declare it. This is typically called Atamahane, or headbump.
 
-\subsection{Declaring a Win}\label{core:ssec:declaring-a-win}
+You should be calling Ron, Pon, and Kan immediately. If you want to call Chii, wait for a bit of time to pass -- around one to two seconds -- then make your call.
 
-As a tile is discarded or drawn, it might complete a player's hand. In that case they will Declare a Win. There are two kinds of declarations for a win. The procedure for each will be described in each call.
+\subsection{Next Turn}\label{core:ssec:next-turn}
 
-\call{Ron}{Ron}{ロン}
-	{\symbalert Requires at least one yaku \pr{sec}{yaku}\\
-	\symbnegate Negated by Furiten \pr{ssec}{furiten}}
-	{As a tile is discarded that completes your hand, if you are not Furiten, you may declare ``Ron,'' reveal your entire hand, tally the score as described in the section on Paying out a Winning Hand \pr{sec}{paying-hand}, then the hand ends. Multiple players may declare Ron on the same tile.}
+Then the next player -- that is the player to your \emph{right} -- will begin their turn by Drawing a Tile. However, if there are no tiles left in the live wall, instead proceed to Exhaustive~Draw~\ar{ssec}{exhaustive-draw}.
 
-\call{Tsumo}{Tsumo}{\ruby{自摸}{ツモ}}
-	{\symbalert Requires at least one yaku \pr{sec}{yaku}}
-	{As you draw a tile that completes a hand, you may delcare ``Tsumo,'' set the winning tile to the side of your hand, reveal your entire hand, tally the score as described on \pr{sec}{paying-hand}, then the hand ends.}
+\subsection{Exhaustive Draw}\label{core:ssec:exhaustive-draw}
 
-\subsection{Declaring Riichi}\label{core:ssec:declaring-riichi}
+When there are no tiles left in the live-wall, and a turn would start, instead players will declare the state of their hand and will be paid out accordingly.
 
-This is the most important mechanic in this ruleset. It earns you the Riichi Yaku \pr{yaku}{Riichi} which can turn any closed hand into a hand with yaku. It also enables acces to the Ippatsu Yaku \pr{yaku}{Ippatsu} and Ura Dora \pr{bonus}{Ura Dora}. However, all this benefit must come at a cost.
+Starting from the dealer: if a player has a ready hand, they may say ``Tenpai'' and reveal their hand, otherwise they will say ``Noten'' and flip their hand face down. If you have declared Riichi, you are obligated to declare ``Tenpai'' during this procedure.
 
-% TODO: Ankan Example
-\call{Riichi}{Riichi}{リーチ}
-	{\symbalert Ready hand required\\
-	\symbalert Furiten~\pr{ssec}{furiten} is permanent\\
-	\closedhand}
-	{On your turn, just before you discard, if your hand is ready -- that is it has one or more tiles that compelte it -- you may say ``Riichi.'' After which, discard a tile from your hand sideways. If no one declares a win on that tile, wager a 1,000 point stick in the middle of the table. For the rest of your hand, you may only discard the tile you draw, declare Ron \pr{call}{Ron}, declare Tsumo \pr{call}{Tsumo}, or call an Ankan using the tile you just drew \pr{call}{Ankan}. When you declare a win, for every dora indicator, reveal the tile underneath it as an ura dora indicator.}
+After which, all the Noten players will collectively pay the Tenpai players collectively 3,000 points. That is, if there are two Noten players and two Tenpai players. Both Noten players will have to pay 1,500 points, and each Tenpai player will receive 1,500 points. A table below shows all combinations and payments per player:
 
-This declaration pretty much locks your hand in place, makes you wager 1,000 points, makes furiten permanent, and heavily restricts your ability to call. However, these are acceptable sacrifices for the sheer power this provides.
+\begin{center}\begin{tabular}{|c||ccccc|}\hline
+Players Tenpai & 0 & 1 & 2 & 3 & 4 \\ \hline
+Noten Payments & --- & -1,000 & -1,500 & -3,000 & --- \\
+Tenpai Paid & --- & +3,000 & +1,500 & +1,000 & --- \\\hline
+\end{tabular}\end{center}
 
-\subsection{Furiten}\label{core:ssec:furiten}
+\subsection{End of Hand}\label{core:ssec:end-of-hand}
 
-Furiten is the hardest rule to fully understand, there are two facets of furiten to deal with. Firstly, if you throw away a winning tile, you don't deserve the right to declare Ron. Secondly, you can not choose who you win off of. They come together as follows for the two rules of furiten:
+After a winning declaration happens or the exhaustive draw is reached. You will either move to the next hand, and move to Setting Up a Hand \ar{sec}{hand} with a few things changed, or end the game and move to End of Game Scores \ar{ssec}{end-scores}.
 
-\begin{enumerate}
-	\item While one or more tiles in your discards -- including ones other players have melded -- are also in your wait, you may no longer declare Ron.
-	\item If a tile is discarded that is in your wait, and you do not or can not declare Ron, you may not declare Ron until you discard a tile.
-\end{enumerate}
-
-Let's now unpack these a little more thoroughly. The first rule makes you furiten if one or more tiles in your wait are in your discards. This does not care about if they yield yaku or not. For instance, the following hand has no yaku when it wins on the {\mahjong{1s}} but does on the {\mahjong{4s}} -- {\mahjong{111456m23s789s123p}}. The hand has a wait of {\mahjong{14s}}, so if any of those tiles are in your discards you are furiten, and thus may no longer declare Ron.
-
-The second rule is far more important for this hand. If a player discards the {\mahjong{1s}}, assuming you have not declared Riichi, you may not declare Ron because you have no Yaku. Therefore you are now furiten until you next discard a tile. If the player after them then discards the {\mahjong{4s}}, you can not declare Ron because you are furiten. This is typically referred to as ``Temporary Furiten,'' and while you have declared Riichi, this type of furiten does not go away until the next hand.
-
-% TODO: Exhaustive Draw & End of Hand Procedure

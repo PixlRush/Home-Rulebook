@@ -5,6 +5,8 @@ PDF-TARGETS := Compiled/Full.pdf $(shell find . -name "main.tex" | grep -v "\./m
 
 all: version.tex $(PDF-TARGETS) todo clean
 
+remake: purge all
+
 # Cleaning Up
 clean:
 	@echo "\n--==Cleaning Up==--\n"
@@ -24,13 +26,13 @@ purge:
 todo:
 	@echo "\n--==Compiling Todo Lists==--\n"	
 	@if [ -f todo.txt ]; then rm todo.txt; fi
-	@echo "--== TODO ==--" >> todo.txt
+	@echo "--== TODO ($(shell egrep -Rn --include="*.tex" "^ *% *TODO ?:" | egrep -c ".*")) ==--" >> todo.txt
 	@-egrep -Rn --include="*.tex" "^ *% *TODO ?:" >> todo.txt
-	@echo "\n--== IN-PROGRESS ==--" >> todo.txt
+	@echo "\n--== IN-PROGRESS ($(shell egrep -Rn --include="*.tex" "^ *% *IN[- ]PROGRESS ?:" | egrep -c ".*")) ==--" >> todo.txt
 	@-egrep -Rn --include="*.tex" "^ *% *IN[- ]PROGRESS ?:" >> todo.txt
-	@echo "\n--== REVIEW ==--" >> todo.txt
+	@echo "\n--== REVIEW ($(shell egrep -Rn --include="*.tex" "^ *% *REVIEW ?:" | egrep -c ".*")) ==--" >> todo.txt
 	@-egrep -Rn --include="*.tex" "^ *% *REVIEW ?:" >> todo.txt
-	@echo "\n--== DONE ==--" >> todo.txt
+	@echo "\n--== DONE ($(shell egrep -Rn --include="*.tex" "^ *% *DONE ?:" | egrep -c ".*")) ==--" >> todo.txt
 	@-egrep -Rn --include="*.tex" "^ *% *DONE ?:" >> todo.txt
 	@echo "Done"
 
@@ -38,7 +40,7 @@ version.tex:
 	@./versioning.sh > version.tex
 
 # Compiled PDF creation
-Compiled/Full.pdf: main.tex comp.tex preamble.tex title.tex $(shell find . -name "*.tex")
+Compiled/Full.pdf: main.tex comp.tex preamble.tex title.tex $(shell find . -name "*.tex") Resources/*/*.tex
 	@echo "\n--==Compiling $@==--\n"
 	latexmk -f -xelatex -interaction=nonstopmode -quiet --shell-escape -synctex=1 $<
 	if [[ -f main.glo || -f main.gls || -f main.glg ]]; then makeglossaries main && \
@@ -47,7 +49,7 @@ Compiled/Full.pdf: main.tex comp.tex preamble.tex title.tex $(shell find . -name
 	mv main.pdf $@
 
 # Generalized PDF Creation
-Compiled/%.pdf: %/main.tex %/comp.tex preamble.tex title.tex %/*.tex %/*/*.tex %/*/*/*.tex
+Compiled/%.pdf: %/main.tex %/comp.tex preamble.tex title.tex %/*.tex %/*/*.tex %/*/*/*.tex Resources/*/*.tex
 	@echo "\n--==Compiling $@==--\n"
 	latexmk -f -xelatex -interaction=nonstopmode -quiet -synctex=1 $<
 	if [[ -f main.glo || -f main.gls || -f main.glg ]]; then makeglossaries main && \

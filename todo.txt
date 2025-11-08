@@ -1,4 +1,4 @@
---== TODO (10) ==--
+--== TODO (7) ==--
 ./Core/Gameplay/calls.tex:2:% TODO: Kuikae
 ./Core/Gameplay/gameplay.tex:10:% TODO: Diagrams?
 ./Core/Gameplay/gameplay.tex:23:% TODO: Diagram?
@@ -6,11 +6,11 @@
 ./Core/Scoring/bonus.tex:21:% TODO: Link to procedure for Honba
 ./Core/Scoring/fu.tex:2:% TODO: Write Upgrade Chain
 ./Core/Scoring/scoring.tex:41:% TODO: Write about the game scoresheet
-./Core/Equipment/sticks.tex:1:% TODO: Write section
-./Core/Equipment/tiles.tex:1:% TODO: Write section
-./Core/Equipment/other.tex:1:% TODO: Write section
 
---== IN-PROGRESS (0) ==--
+--== IN-PROGRESS (3) ==--
+./Core/Equipment/sticks.tex:1:% IN-PROGRESS: Write section
+./Core/Equipment/tiles.tex:1:% IN-PROGRESS: Write section
+./Core/Equipment/other.tex:1:% IN-PROGRESS: Write section
 
 --== REVIEW (11) ==--
 ./Core/Gameplay/calls.tex:1:% REVIEW: Write Section

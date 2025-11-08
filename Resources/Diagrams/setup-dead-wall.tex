@@ -1,0 +1,53 @@
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[scale=0.25]
+	% east wall
+	\foreach \x in {0, 1,..., 16}{
+		\draw (\x+1,-18.4) rectangle (\x,-17);
+		\fill [pattern=north east lines] (\x+1,-18.4) rectangle (\x,-17);
+	}
+	% south wall
+	\foreach \y in {-16}{
+		\draw (17,\y-1) rectangle (18.4,\y);
+		\fill [pattern=north east lines] (17,\y-1) rectangle (18.4,\y);
+	}
+	% west wall
+	\foreach \x in {0, 1,..., 6}{
+		\draw (\x+1,+1.4) rectangle (\x,0);
+		\fill [pattern=north east lines] (\x+1,+1.4) rectangle (\x,0);
+	}
+	% north wall
+	\foreach \y in {-0,-1,...,-16}{
+		\draw (-1.4,\y-1) rectangle (0,\y);
+		\fill [pattern=north east lines] (-1.4,\y-1) rectangle (0,\y);
+	}
+	% bottom layer
+	\foreach \x in {4,6,...,18}{
+		\draw (\x,-8.5) rectangle (\x+2,-10);
+		\fill [pattern=north east lines] (\x,-8.5) rectangle (\x+2,-9);
+		\draw (\x,-9) rectangle (\x+2,-9);
+	}
+	% top layer
+	\foreach \x in {4,6,...,10,14}{
+		\draw (\x,-7) rectangle (\x+2,-8.5);
+		\fill [pattern=north east lines] (\x,-7) rectangle (\x+2,-7.5);
+		\draw (\x,-7.5) rectangle (\x+2,-7.5);
+	}
+	% dora
+	\draw (12,-7) rectangle (14,-8.5);
+	\fill [pattern=north east lines] (12,-8) rectangle (14,-8.5);
+	\draw (12,-8) -- (14,-8);
+	% flipping the dora
+	\draw [->,shorten >=1pt] (12.5,-7.75) |- (13,-6) -| (13.5,-7);
+	% % dropping the tile
+	\draw [dashed, thin] (16.1,-7.1) rectangle (17.9,-8.4);
+	\draw [->,shorten >=1pt] (17,-7.75) -| (19,-8.5);
+
+	% breakout lines
+	\draw [|-|] (-0.3, 1.7) -- (7.3, 1.7);
+	\draw [->] (3.5, 1.7) -- (3.5,3) -- (12,3) -- (12,-5.5);
+	\draw [|-|] (3.7, -5.5) -- (20.3, -5.5);
+\end{tikzpicture}
+\caption{A diagram showing what needs to be done to properly set up the dead wall.}
+\end{center}
+\end{figure}

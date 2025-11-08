@@ -8,21 +8,27 @@
 \setlength{\parskip}{6pt}
 
 % Table Controllers
-\usepackage{tabulary, multirow, makecell, float}
+\usepackage{tabulary, tabularx, multirow, makecell, float}
 \setlength{\tabcolsep}{2pt}        % Space between Columns
 % Special columns
+\newlength{\matchscorewidth}
+\setlength{\matchscorewidth}{0.7in}
+\newcolumntype{M}{>{\centering\arraybackslash}p{\matchscorewidth}}
 \newcolumntype{S}{>{\raggedleft\arraybackslash}p{0.5in}}
 \newcolumntype{H}{>{\centering\arraybackslash}p{0.25in}}
 \newcolumntype{F}{>{\centering\arraybackslash}p{0.25in}}
 
 % Support for Japanese Text
 \usepackage{xeCJK, ruby}
-\setCJKmainfont{Toppan Bunkyu Mincho}
-\newCJKfontfamily\cjkbf{Toppan Bunkyu Midashi Mincho}
+\setCJKmainfont[BoldFont=Toppan Bunkyu Midashi Mincho]{Toppan Bunkyu Mincho}
 \renewcommand{\rubysep}{0ex}
 
 % Support for loading images
 \usepackage{graphicx}
+
+% Support for drawing diagrams
+\usepackage{tikz}
+\usetikzlibrary{patterns}
 
 % Misc Imports
 \usepackage[hidelinks]{hyperref}
@@ -42,7 +48,7 @@
 	% #3 - Japanese Name
 	% #4 - Flags for the Yaku
 	% #5 - Description of the Yaku
-	\subsubsection*{\large #1~--~{\cjkbf #3} {\normalfont\itshape\normalsize``#2''\/}}\label{\rulesetprefix:#6:#1}
+	\subsubsection*{\large #1~--~\textbf{#3} {\normalfont\itshape\normalsize``#2''\/}}\label{\rulesetprefix:#6:#1}
 	\vspace*{-12pt}
 	\ifx\e\t\else \textit{\footnotesize #4\\} \fi
 	\hspace*{\parindent}#5
@@ -51,10 +57,17 @@
 \newcommand{\yaku}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{yaku}}
 \newcommand{\bonus}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{bonus}}
 \newcommand{\fu}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{fu}}
+\newcommand{\call}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{call}}
+\newcommand{\decl}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{decl}}
+\newcommand{\equip}[5]{\ruleentry{#1}{#2}{#3}{#4}{#5}{equip}}
 
 % Referencer Wrapper
 \newcommand{\pr}[2]{\textit{(p\pageref{\rulesetprefix:#1:#2})}}
-\newcommand{\prs}[3]{\textit{(p\pageref{\rulesetprefix:#1:#2}/\pageref{\rulesetprefix:#1:#3})}}
+\newcommand{\prs}[3]{\textit{(p\pageref{\rulesetprefix:#1:#2},~\pageref{\rulesetprefix:#1:#3})}}
+\newcommand{\prss}[4]{\textit{(p\pageref{\rulesetprefix:#1:#2},~\pageref{\rulesetprefix:#1:#3})},~\pageref{\rulesetprefix:#1:#4})}
+\newcommand{\ar}[2]{\textit{(\autoref{\rulesetprefix:#1:#2})}}
+\newcommand{\ars}[3]{\textit{(\autoref{\rulesetprefix:#1:#2}/\autoref{\rulesetprefix:#1:#3})}}
+\newcommand{\arss}[4]{\textit{(\autoref{\rulesetprefix:#1:#2},~\autoref{\rulesetprefix:#1:#3})},~\autoref{\rulesetprefix:#1:#4})}
 
 % Useful Symbols
 \def\symbnegate{\( \times \)}
@@ -67,6 +80,140 @@
 \def\upgradesfrom{\( \rightarrow \)}
 \def\upgradestoother{\( \Leftarrow \)}
 \def\upgradesfromother{\( \Rightarrow \)}
+% Scoring Symbols
+\def\minus{\blacktriangle}
+\def\mminus{$\blacktriangle$}
+\def\handmarker{-\hfill(\hspace{4ex})}
+\def\deposit{\tiny R}
+
+% Record Sheet Commands
+% Set Title for Pages
+\newcommand{\mjgGameTitle}[1]{
+    \textbf{\Large #1}
+    \vspace{2em}
+}
+% Set Players
+\newcommand{\mjgSetPlayers}[4]{
+	\def\playerE{#1}
+	\def\playerS{#2}
+	\def\playerW{#3}
+	\def\playerN{#4}
+}
+\newcommand{\mjgSSetPlayers}[3]{ % Sanma Form
+	\mjgSetPlayers{#1}{#2}{#3}{}
+}
+% Header Row
+\newcommand{\mjgHeaderRow}[4]{
+	\multicolumn{1}{c}{}
+	& \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{#1}
+	& \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{#2}
+	& \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{#3}
+	& \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{#4} \\
+}
+\newcommand{\mjgSHeaderRow}[3]{ % Sanma Form
+	\multicolumn{1}{c}{}
+	& \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{#1}
+	& \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{#2}
+	& \multicolumn{1}{>{\centering\arraybackslash}m{\matchscorewidth}}{#3} \\
+}
+% Game Parameters
+\def\mjgSScore{25,000}
+\def\mjgRScore{30,000}
+\def\mjgUma{+30/+10/\mminus10/\mminus30}
+\def\mjgOka{+20}
+
+\newcommand{\mjgGameFooter}{
+    \textbf{Starting Score:} \mjgSScore \hspace*{1cm}
+    \textbf{Return Score:} \mjgRScore \\
+    \textbf{Uma:} \mjgUma \hspace*{1cm}
+    \textbf{Oka:} \mjgOka
+}
+
+% Match Sheet
+\newcommand{\mjgMatchTable}[1]{
+	% \typeout{--==mjgMatchTable==--}
+
+	\noindent
+	\begin{tabularx}{\textwidth}[c]{
+		>{\centering\arraybackslash\noindent}X
+		|M|M|M|M
+		|c}
+		\mjgHeaderRow{\textbf{Player 1}}{\textbf{Player 2}}{\textbf{Player 3}}{\textbf{Player 4}}
+		\mjgHeaderRow{\playerE}{\playerS}{\playerW}{\playerN}
+		\hline
+		#1 % mjgTableBody
+	\end{tabularx}
+	\vspace{1em}
+
+	\mjgGameFooter
+	\mjgSetPlayers{}{}{}{}
+}
+\newcommand{\mjgMatchTableFirstGame}[4]{
+    Raw Score & #1 & \multirow{4}{*}{\rotatebox{-90}{\textit{Game 1}}} \\\cline{2-5}
+    Match Points & #2 \\\cline{2-5}
+    Placement & #3 \\\cline{2-5}
+    \textbf{Total} & #4 \\\hline\hline
+}
+\newcommand{\mjgMatchTableGame}[6]{
+    Raw Score & #2 & \multirow{4}{*}{\rotatebox{-90}{\textit{#1}}} \\\cline{2-5}
+    Match Points & #3 \\\cline{2-5}
+    Placement & #4 \\\cline{2-5}
+    Subtotal & #5 \\\cline{2-5}
+    \textbf{Total} & #6 \\\hline\hline
+}
+\newcommand{\mjgMatchTableLastGame}[6]{
+    Raw Score & #2 & \multirow{4}{*}{\rotatebox{-90}{\textit{#1}}} \\\cline{2-5}
+    Match Points & #3 \\\cline{2-5}
+    Placement & #4 \\\cline{2-5}
+    Subtotal & #5 \\\cline{2-5}
+    \textbf{Grand Total} & #6 \\\hline
+}
+
+% Game Sheet
+\newcommand{\mjgGameTable}[2]{
+	% \typeout{--==mjgGameTable==--}
+
+	\noindent
+	\begin{tabularx}{\textwidth}[c]{
+		>{\centering\arraybackslash\noindent}X
+		|M|M|M|M|}
+		\mjgHeaderRow{\textbf{East}}{\textbf{South}}{\textbf{West}}{\textbf{North}}
+		\mjgHeaderRow{\playerE}{\playerS}{\playerW}{\playerN}\hline
+        Starting Score & \mjgSScore & \mjgSScore & \mjgSScore & \mjgSScore \\\hline
+		\hline
+		#1 % mjgTableBody
+		\\\hline\hline
+		#2
+		\\\hline
+	\end{tabularx}
+	\vspace{1em}
+
+	\mjgGameFooter
+	\mjgSetPlayers{}{}{}{}
+}
+
+% Environment
+\newenvironment{mjgRecordSheet}[2]
+	{
+	% Set Useful Params
+	% Store value of \arraystretch
+	\def\tempArraystretch{\arraystretch}
+	\def\arraystretch{#1}
+	% Set width of column
+	\setlength{\matchscorewidth}{#2}
+
+	% Start Figure
+	\begin{figure}[h]
+	\centering
+	}
+	{
+	\end{figure}
+
+	% Restore value of \arraystretch
+	\def\arraystretch{\tempArraystretch}
+	% Restore default value of matchscorewidth
+	\setlength{\matchscorewidth}{0.7in}	
+	}
 
 % Set up generic titling
 \renewcommand\title{}

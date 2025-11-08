@@ -1,0 +1,79 @@
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[scale=0.25]\centering
+	% vertical walls
+	\foreach \y in {-0,-1,...,-16}{
+		\foreach \x in {0,18.4}{
+			\draw (\x-1.4,\y-1) rectangle (\x,\y);
+			\fill [pattern=north east lines] (\x-1.4,\y-1) rectangle (\x,\y);
+		}
+	}
+	% dealer wall
+	\foreach \x in {0, 1,..., 16}{
+		\draw (\x+1,-18.4) rectangle (\x,-17);
+		\fill [pattern=north east lines] (\x+1,-18.4) rectangle (\x,-17);
+	}
+	% cut wall
+	\foreach \x in {0, 1,..., 6, 8, 9,..., 17}{
+		\draw (\x+1,+1.4) rectangle (\x,0);
+		\fill [pattern=north east lines] (\x+1,+1.4) rectangle (\x,0);
+	}
+	% Marking who draws what
+	\draw [|-|, shorten >=1pt] (8, 2) -- node [midway, above] {E} (10, 2);
+	\draw [|-|, shorten >=1pt] (10, 2) -- node [midway, above] {S} (12, 2);
+	\draw [|-|, shorten >=1pt] (12, 2) -- node [midway, above] {W} (14, 2);
+	\draw [|-|, shorten >=1pt] (14, 2) -- node [midway, above] {N} (16, 2);
+	\draw [|-|, shorten >=1pt] (16, 2) -- node [midway, above] {E} (18, 2);
+	\draw [|-|, shorten >=1pt] (19, 0) -- node [midway, right] {S} (19, -2);
+	\draw [|-|, shorten >=1pt] (19, -2) -- node [midway, right] {W} (19, -4);
+	\draw [|-|, shorten >=1pt] (19, -4) -- node [midway, right] {N} (19, -6);
+	\draw [|-|, shorten >=1pt] (19, -6) -- node [midway, right] {E} (19, -8);
+	\draw [|-|, shorten >=1pt] (19, -8) -- node [midway, right] {S} (19, -10);
+	\draw [|-|, shorten >=1pt] (19, -10) -- node [midway, right] {W} (19, -12);
+	\draw [|-|, shorten >=1pt] (19, -12) -- node [midway, right] {N} (19, -14);
+	\draw [|-|, shorten >=1pt] (19, -14) -- node [midway, right] {$*$} (19, -17);
+
+	% SPLIT TO SIDE VIEWS
+	% side-view block draw
+	\foreach \x in {23,24.5, 27,28.5, 31,32.5, 35,36.5, 39,40.5}{
+		\foreach \y in {0, -1}{
+			\draw (\x,\y) rectangle (\x+1.5,\y-1);
+			\fill [pattern=north east lines] (\x,\y) rectangle (\x+1.5,\y-0.3);
+			\draw (\x,\y-0.3) -- (\x+1.5,\y-0.3);
+		}
+	}
+
+	\foreach \x in {23, 27, 31, 35, 39}{
+		\draw [dashed] (\x-0.3, 0.3) rectangle (\x+3.3, -2.3);
+	}
+	\draw (24.5, 0.3) node [above] {E};
+	\draw (28.5, 0.3) node [above] {S};
+	\draw (32.5, 0.3) node [above] {W};
+	\draw (36.5, 0.3) node [above] {N};
+	\draw (40.5, 0.3) node [above] {E};
+
+	\draw [|-|] (7.7, 4) -- (18.3, 4);
+	\draw [->] (13.0, 4) -- (13,5) -- (32,5) -- (32,2);
+	\draw [|-|] (22.7, 2) -- (42.3, 2);
+
+	% side-view jump-draw
+	\foreach \x in {28, 31, 34}{
+		\foreach \y in {-9, -11}{
+			\draw (\x,\y) rectangle (\x+3,\y-2);
+			\fill [pattern=north east lines] (\x,\y) rectangle (\x+3,\y-0.7);
+			\draw (\x,\y-0.7) -- (\x+3,\y-0.7);
+		}
+	}
+	\draw (29.5, -10) node [circle, fill=white, inner sep=1pt] {\small E};
+	\draw (29.5, -12) node [circle, fill=white, inner sep=1pt] {\small S};
+	\draw (32.5, -10) node [circle, fill=white, inner sep=0pt] {\small W};
+	\draw (32.5, -12) node [circle, fill=white, inner sep=1pt] {\small N};
+	\draw (35.5, -10) node [circle, fill=white, inner sep=1pt] {\small E};
+
+	\draw [->] (21, -15.5) -- (32.5,-15.5) -- (32.5,-14);
+	\draw [|-|] (27.7, -14) -- (37.3, -14);
+
+\end{tikzpicture}
+\caption{A diagram showing how to draw your opening hands correctly.}
+\end{center}
+\end{figure}

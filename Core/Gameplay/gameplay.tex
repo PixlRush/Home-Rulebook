@@ -1,2 +1,59 @@
-% TODO: Write Section
+% REVIEW: Write Section
 \section{Gameplay}\label{core:sec:gameplay}
+
+After everyone has their starting hands, we may begin playing the game. The Dealer will take the first turn.
+
+\subsection{Draw a Tile}\label{core:ssec:draw-a-tile}
+
+Take the most counter-clockwise tile remaining in the live wall and add it to your hand. 
+
+% TODO: Diagrams?
+When you draw a tile, ensure it does not get incorporated or sorted into your hand. This is important because players must be able to determine if the tile you discard is the one you just drew or not. You may leave a small gap between your hand and the tile you just drew, leave it sideways next to your hand, or you may place it sideways on top of your hand. All that matters is you do not incorporate it into your hand until after you discard a tile.
+
+\subsection{You Make Calls / Declarations}\label{core:ssec:you-call-declare}
+
+This is the time in which you may make calls and declarations that happen on your turn. The available calls are: Kakan~\pr{call}{Kakan}, and Ankan~\pr{call}{Ankan}. The available declarations are: Tsumo~\pr{decl}{Tsumo}, and Riichi~\pr{decl}{Riichi}.
+
+If you declare Riichi at this time, you must move directly to the next step and discard a tile.
+
+\subsection{Discard}\label{core:ssec:discard}
+
+Choose any tile in your hand, and discard it into your discards in front of you.
+
+% TODO: Diagram?
+You should be keeping your discards in orderly rows no more than six tiles long. If you would discard a seventh tile in a row, instead start a new row below it. If you would make your nineteenth or higher discard, you may either extend your third row or start a new fourth row, this is up to you.
+
+\subsection{Others Make Calls / Declarations}\label{core:ssec:others-call-declare}
+
+After you discard a tile and before the next player draws their tile, everyone else will have a chance to make calls with that tile or declare a win on that tile.
+
+There are a few things of note for making calls this way: While there are no tiles left in the live wall, calls may not be made during this step. After a call is made, it will be the calling player's turn and they will continue from the appropriate step, typically Discard.
+
+A tile discarded can only be claimed by \emph{one} call or declaration. If more than one person wants that tile, there is a priority to determine who actually gets it. It is: Ron~\pr{decl}{Ron} \(\rightarrow\) Kan~\pr{call}{Kan}/Pon~\pr{call}{Pon} \(\rightarrow\) Chii~\pr{call}{Chii}.
+
+In the case where more than one player wants to declare Ron, the player closest to the discarder in turn order gets to declare it. This is typically called Atamahane, or headbump.
+
+You should be calling Ron, Pon, and Kan immediately. If you want to call Chii, wait for a bit of time to pass -- around one to two seconds -- then make your call.
+
+\subsection{Next Turn}\label{core:ssec:next-turn}
+
+Then the next player -- that is the player to your \emph{right} -- will begin their turn by Drawing a Tile. However, if there are no tiles left in the live wall, instead proceed to Exhaustive~Draw~\ar{ssec}{exhaustive-draw}.
+
+\subsection{Exhaustive Draw}\label{core:ssec:exhaustive-draw}
+
+When there are no tiles left in the live-wall, and a turn would start, instead players will declare the state of their hand and will be paid out accordingly.
+
+Starting from the dealer: if a player has a ready hand, they may say ``Tenpai'' and reveal their hand, otherwise they will say ``Noten'' and flip their hand face down. If you have declared Riichi, you are obligated to declare ``Tenpai'' during this procedure.
+
+After which, all the Noten players will collectively pay the Tenpai players collectively 3,000 points. That is, if there are two Noten players and two Tenpai players. Both Noten players will have to pay 1,500 points, and each Tenpai player will receive 1,500 points. A table below shows all combinations and payments per player:
+
+\begin{center}\begin{tabular}{|c||ccccc|}\hline
+Players Tenpai & 0 & 1 & 2 & 3 & 4 \\ \hline
+Noten Payments & --- & -1,000 & -1,500 & -3,000 & --- \\
+Tenpai Paid & --- & +3,000 & +1,500 & +1,000 & --- \\\hline
+\end{tabular}\end{center}
+
+\subsection{End of Hand}\label{core:ssec:end-of-hand}
+
+After a winning declaration happens or the exhaustive draw is reached. You will either move to the next hand, and move to Setting Up a Hand \ar{sec}{hand} with a few things changed, or end the game and move to End of Game Scores \ar{ssec}{end-scores}.
+

@@ -1,5 +1,5 @@
 % REVIEW: Write section
-% TODO: Refactor to Resources and Diagrams
+% DONE: Refactor to Resources and Diagrams
 \section{Tiles}\label{core:sec:tiles}
 
 The game is played with 136 tiles. Each tile has exactly four copies of it in the deck, and no further.
@@ -8,49 +8,23 @@ The game is played with 136 tiles. Each tile has exactly four copies of it in th
 
 There are three suits of numbered tiles. These tiles may form runs. They are ordered 1 through 9 in each of the following examples:
 
-\begin{center}
-\textbf{\large Pinzu -- \ruby{筒子}{ピンズ}} \textit{``Dots''}
+\input{Resources/Tiles/pinzu}
 
-{\mahjong[1.5cm]{123456789p}}
-\end{center}
+\input{Resources/Tiles/souzu}
 
-\begin{center}
-\textbf{\large Souzu -- \ruby{索子}{ソーズ}} \textit{``Sticks''}
-
-{\mahjong[1.5cm]{123456789s}}
-\end{center}
-
-\begin{center}
-\textbf{\large Manzu -- \ruby{萬子}{マンズ}} \textit{``Mans''}
-
-{\mahjong[1.5cm]{123456789m}}
-\end{center}
+\input{Resources/Tiles/manzu}
 
 \subsection{Honour Tiles}\label{core:ssec:hon-tiles}
 
-% TODO: Better Tile Names
+% DONE: Better Tile Names
 There are two suits of honour tiles. These tiles may \emph{not} form runs. Each of the honours do not follow a simple numbered structure and will be named below in each of their sections
 
-\begin{center}
-\textbf{\large Kazepai -- \ruby{風牌}{かぜぱい}} \textit{``Winds''}
+\input{Resources/Tiles/kazehai}
 
-{\mahjong[1.5cm]{1234z}}
-
-\parbox{1cm}{East} \parbox{1cm}{South} \parbox{1cm}{West} \parbox{1cm}{North}
-\end{center}
-
-\begin{center}
-\textbf{\large Sangenpai -- \ruby{三元牌}{さんげんぱい}} \textit{``Dragons''}
-
-{\mahjong[1.5cm]{567z}}
-
-\parbox{1cm}{White} \parbox{1cm}{Green} \parbox{1cm}{Red}
-\end{center}
+\input{Resources/Tiles/sangenpai}
 
 \subsection{Red Dora}\label{core:ssec:akadora}
 
 Some tiles can be recoloured to be entirely Red. These tiles are known as Red or Aka Dora. Each Red Dora must replace a non-red couterpart. This ruleset uses one of each red five shown below. This then means that there are three normal fives, and one red five per suit.
 
-\begin{center}
-{\mahjong[1.5cm]{0p0s0m}}
-\end{center}
+\input{Resources/Tiles/akadora}

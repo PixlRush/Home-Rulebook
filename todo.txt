@@ -1,4 +1,4 @@
---== TODO (9) ==--
+--== TODO (8) ==--
 ./Core/Gameplay/calls.tex:2:% TODO: Kuikae
 ./Core/Gameplay/gameplay.tex:10:% TODO: Diagrams?
 ./Core/Gameplay/gameplay.tex:23:% TODO: Diagram?
@@ -7,7 +7,6 @@
 ./Core/Scoring/fu.tex:2:% TODO: Write Upgrade Chain
 ./Core/Scoring/scoring.tex:41:% TODO: Write about the game scoresheet
 ./Core/Equipment/tiles.tex:2:% TODO: Refactor to Resources and Diagrams
-./Core/Equipment/tiles.tex:31:% TODO: Better Tile Names
 
 --== IN-PROGRESS (2) ==--
 ./Core/Equipment/sticks.tex:1:% IN-PROGRESS: Write section

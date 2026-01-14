@@ -7,10 +7,9 @@
 ./Core/Scoring/fu.tex:2:% TODO: Write Upgrade Chain
 ./Core/Scoring/scoring.tex:41:% TODO: Write about the game scoresheet
 
---== IN-PROGRESS (1) ==--
-./Core/Equipment/other.tex:1:% IN-PROGRESS: Write section
+--== IN-PROGRESS (0) ==--
 
---== REVIEW (13) ==--
+--== REVIEW (14) ==--
 ./Core/Gameplay/calls.tex:1:% REVIEW: Write Section
 ./Core/Gameplay/declarations.tex:1:% REVIEW: Write Section
 ./Core/Gameplay/gameplay.tex:1:% REVIEW: Write Section
@@ -24,6 +23,7 @@
 ./Core/Scoring/yaku.tex:230:% REVIEW: Is Suuankou a closed hand?
 ./Core/Equipment/sticks.tex:1:% REVIEW: Write section
 ./Core/Equipment/tiles.tex:1:% REVIEW: Write section
+./Core/Equipment/other.tex:1:% REVIEW: Write section
 
 --== DONE (5) ==--
 ./Core/Gameplay/declarations.tex:6:% DONE: Ankan Example

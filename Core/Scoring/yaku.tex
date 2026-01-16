@@ -3,12 +3,13 @@
 
 \subsection{1 Han Yaku}\label{core:ssec:1-han-yaku}
 
-% TODO: Link to Declaration
+% DONE: Link to Declaration
 \yaku{Riichi}{Riichi}{リーチ}
 	{\closedhand \\ 
 	\upgradesto Enables Ippatsu~\pr{yaku}{Ippatsu} \\ 
 	\upgradestoother Enables Ura~Dora~\pr{bonus}{Ura Dora} \\ 
-	\upgradesto Upgrades into Double~Riichi~\pr{yaku}{Double Riichi}}
+	\upgradesto Upgrades into Double~Riichi~\pr{yaku}{Double Riichi}\\
+	\upgradestoother Also a declaration~\pr{decl}{Riichi}}
 	{Declare Riichi. That is, while you have a ready hand, and it is a closed hand, wager 1,000 points and discard a tile sideways. You can only discard the tile you draw from that point on.}
 
 \yaku{Ippatsu}{One Shot}{\ruby{一発}{いっぱつ}}
@@ -60,13 +61,13 @@
 \yaku{Jikaze}{Seat Wind}{\ruby{自風}{じかぜ}}
 	{\upgradesfrom A type of Yakuhai~\pr{yaku}{Yakuhai}\\
 	\upgradesto Upgrades into Renfuu~\pr{yaku}{Renfuu} with Jikaze~\pr{yaku}{Jikaze}\\
-	\upgradesto Upgrades into Shousuushii~\pr{yaku}{Shousuushii}}
+	\upgradesto Upgrades into Suushiihou~\pr{yaku}{Suushiihou}}
 	{Have a group of the wind corresponding to your seat.}
 
 \yaku{Bakaze}{Round Wind}{\ruby{場風}{ばかぜ}}
 	{\upgradesfrom A type of Yakuhai~\pr{yaku}{Yakuhai}\\
 	\upgradesto Upgrades into Renfuu~\pr{yaku}{Renfuu} with Bakaze~\pr{yaku}{Bakaze}\\
-	\upgradesto Upgrades into Shousuushii~\pr{yaku}{Shousuushii}}
+	\upgradesto Upgrades into Suushiihou~\pr{yaku}{Suushiihou}}
 	{Have a group of the wind corresponding to the current round.}
 
 \yaku{Sangenpai}{Dragon Tiles}{\ruby{三元牌}{さんげんパイ}}
@@ -102,7 +103,7 @@
 
 \yaku{Renfuu}{Double Wind}{\ruby{連風}{れんプー}}
 	{\upgradesfrom Upgrades from Jikaze~\pr{yaku}{Jikaze} and Bakaze~\pr{yaku}{Bakaze}\\
-	\upgradesto Upgrades to Shousuushii~\pr{yaku}{Shousuushii}}
+	\upgradesto Upgrades to Suushiihou~\pr{yaku}{Suushiihou}}
 	{Have a group of Wind tiles that is both your seat wind and the round wind.}
 
 \yaku{Shousangen}{Small Three Dragons}{\ruby{小三元}{しょうさんげん}}
@@ -208,15 +209,20 @@
 	\brokenhand}
 	{While you are not the dealer, win on your first draw.}
 
+% DONE: Add Renhou
+\yaku{Renhou}{Blessing of Man}{\ruby{人和}{レンホー}}
+	{\closedhand \\
+	\brokenhand}
+	{While you are not the dealer, win before your first draw.}
+
 \yaku{Daisangen}{Big Three Dragons}{\ruby{大三元}{だいさんげん}}
 	{\upgradesfrom Upgrades from Shousangen~\pr{yaku}{Shousangen}}
 	{Your hand contains three groups of Dragon tiles.}
 
-\yaku{Shousuushii}{Small Four Winds}{\ruby{小四喜}{ショースーシー}}
+\yaku{Suushiihou}{Four Winds}{\ruby{四喜和}{スーシーホー}}
 	{\upgradesfrom Upgrades from Jikaze~\pr{yaku}{Jikaze}\\
 	\upgradesfrom Uprgades from Bakaze~\pr{yaku}{Bakaze}\\
-	\upgradesfrom Upgrades from Renfuu~\pr{yaku}{Renfuu} \\
-	\upgradesto Upgrades into Daisuushii~\pr{yaku}{Daisuushii}}
+	\upgradesfrom Upgrades from Renfuu~\pr{yaku}{Renfuu}}
 	{Your hand contains three groups of Wind tiles, with your pair being the fourth.}
 
 \yaku{Chinroutou}{All Terminals}{\ruby{清老頭}{チンロウトウ}}
@@ -228,11 +234,11 @@
 	{}
 	{Your hand contains only Honour tiles.}
 
-% REVIEW: Is Suuankou a closed hand?
+% DONE: Is Suuankou a closed hand?
 \yaku{Suuankou}{Four Concealed Triplets}{\ruby{四暗刻}{スーアンコー}}
-	{\upgradesfrom Upgraded from Toitoi~\pr{yaku}{Toitoi} \\
-	\upgradesfrom Upgraded from Sanankou~\pr{yaku}{Sanankou} \\
-	\upgradesto Upgrades to Suuankou~Tanki~\pr{yaku}{Suuankou Tanki}}
+	{\closedhand\\
+	\upgradesfrom Upgraded from Toitoi~\pr{yaku}{Toitoi} \\
+	\upgradesfrom Upgraded from Sanankou~\pr{yaku}{Sanankou}}
 	{Your hand contains four closed groups.}
 
 \yaku{Suukantsu}{Four Kans}{\ruby{四槓子}{スーカンツ}}
@@ -245,32 +251,12 @@
 	{Your hand only contains tiles which are entirely green. You don't need to use the green dragon. Those tiles are: {\mahjong{23468s6z}}.}
 
 \yaku{Chuurenpoutou}{Nine Gates}{\ruby{九連宝灯}{チュウレンポウトウ}}
-	{\closedhand \\
-	\upgradesto Upgrades to Junsei~Chuurenpoutou~\pr{yaku}{Junsei Chuurenpoutou}}
+	{\closedhand}
 	{Your hand contains the following pattern in only one numbered suit: 1112345678999, with an additional tile in the same numbered suit.}
 
 \yaku{Kokushi Musou}{Thirteen Orphans}{\ruby{国士無双}{こくしむそう}}
 	{\closedhand \\
-	\upgradesto Upgrades to Kokushi~Musou~Juusanmen~Machi~\pr{yaku}{Kokushi Musou Juusanmen Machi}}
+	\upgradestoother Has specific Fu for its wait~\pr{fu}{Kokushi Musou}}
 	{Your hand contains the following pattern: {\mahjong{19m19p19s1234567z}}, with an additional Orphan tile.}
 
-% TODO: Remove Double Yakuman
-\subsection{Double Yakuman}\label{core:ssec:double-yakuman-yaku}
-
-\yaku{Daisuushii}{Big Four Winds}{\ruby{大四喜}{ダイスーシー}}
-	{\upgradesfrom Upgrades from Shousuushii~\pr{yaku}{Shousuushii}}
-	{Your hand contains four groups of Wind tiles.}
-
-\yaku{Suuankou Tanki}{Four Concealed Triplets, Single Tile Wait}{\ruby{四暗刻}{スーアンコー}\ruby{単騎待ち}{たんきまち}}
-	{\upgradesfrom Upgrades from Suuankou~\pr{yaku}{Suuankou}}
-	{Your hand contains four closed groups.}
-
-\yaku{Junsei Chuurenpoutou}{Pure Nine Gates}{\ruby{純正}{じゅんせい}\ruby{九連宝灯}{チュウレンポウトウ}}
-	{\closedhand \\
-	\upgradesfrom Upgrades from Chuurenpoutou~\pr{yaku}{Chuurenpoutou}}
-	{The closed part of your hand contains the following pattern in only one numbered suit: 1112345678999, with an additional tile in the same numbered suit.}
-
-\yaku{Kokushi Musou Juusanmen Machi}{Thirteen Orphans Thirteen-sided Wait}{\ruby{国士無双}{こくしむそう}\ruby{十三面待ち}{じゅうさんめんまち}}
-	{\closedhand \\
-	\upgradesfrom Upgrades from Kokushi~Musou~\pr{yaku}{Kokushi Musou}}
-	{Your hand without your winning tile contains the following pattern: {\mahjong{19m19p19s1234567z}}.}
+% DONE: Remove Double Yakuman

@@ -1,20 +1,81 @@
 % REVIEW: Write Section
-% TODO: Make use of ars
+% DONE: Make use of ars
 \section{Scoring}\label{core:sec:scoring}
 
 \subsection{Paying out a Winning Hand}\label{core:ssec:paying-hand}
 
-% TODO: Pao
-% TODO: Yakuman Edge Case
-In order to pay out a winning hand, follow the following procedure:
+% REVIEW: Pao
+% REVIEW: Yakuman Edge Case
+% REVIEW: Honba Math
+In order to pay out a winning hand, there are three things you need to check to find where to get the values:
 \begin{enumerate}
-	\item Count the Han earned from Yaku~\ref{core:sec:yaku}, and Bonuses~\ref{core:ssec:1-han-bonus}.
-	\item If that number is 4 or lower, count the Fu~\ref{core:sec:fu} the hand earns. Round that to the next 10, with the exception of hands winning with Chiitoitsu~\pr{yaku}{Chiitoitsu}, that hand is always worth 25 fu.
+	\item Are there any Yakuman in the hand? Count the number of Yakuman and then consult the table under Yakuman and pay out accordingly.
+	\textit{\small If the condition for Sekinin Barai~\ar{sssec}{sekinin-barai} is met, be sure to modify payment accordingly.}
+	\item Count the number of Han, if that number if 5 or more, consult the table starting from Mangan and find the row with the right amount of Han.
+	\item Count the number of Fu, then use that number to find the correct score.
 \end{enumerate}
 
-After determining the Han, and if needed Fu, consult the table in Figure~\ref{core:fig:points} to determine the score. Taking into account Dealer or Non-dealer, Ron or Tsumo. Note that the third column is what is paid by all for a dealer Tsumo.
+After determining the value of the hand, there are two more things to consider: Is the winning player a dealer or not? Is it a Ron or a Tsumo?
 
-% TODO: Describe the math
+Take the following snippet of the table, this is for 3 Han 30 Fu or 2 Han 60 Fu. Going from left to right: 3,900 is the value for a non-dealer ron, 1,000 is what the non-dealer pays on a non-dealer tsumo, 2,000 is what the dealer pays on a non-dealer tsumo \textit{and} what everyone pays on a dealer tsumo, 5,800 is the value of a dealer ron.
+
+\input{Core/Scoring/Resources/score-table-snippet.tex}
+
+Then consult \autoref{\rulesetprefix:fig:points} and find the appropriate scores! Be sure to add the Honba Bonuses \ar{ssec}{100-point-bonus} if any to these numbers. With a Ron tripling the bonus for the only payer.
+
+\subsubsection{Sekinin Barai}\label{core:sssec:sekinin-barai}
+
+Sekinin Barai is a rule that makes someone responsible for completing a Yakuman~Yaku~\ar{ssec}{yakuman-yaku} liable for part of the payment. This is a rule that is to prevent combination play, where one player feeds another the yakuman intentionally.
+
+The way this rule can be activated is: The player has called for every group but one for a Yakuman Yaku, you discard a tile that would be in the final group for that yakuman, they then call that tile.
+
+For example: If a player has made two pons of dragons -- {\mahjong{5'55z}} and {\mahjong{66'6z}} -- and you discard the third dragon and they call it confirming Daisangen~\pr{yaku}{Daisangen}, you are now liable for that Yakuman because you completed it.
+
+This modifies payment for \textit{only} the Yakuman for which someone is liable, and it modifies it as follows:
+\begin{itemize}
+	\item On a Tsumo: The liable player pays the entire value of the Yakuman. \\
+	\item On a Ron: The liable player pays half the value of the Yakuman.
+\end{itemize}
+
+For example: Let's say the above Daisangen is won. If they Tsumo, the liable player pays 32,000. If they Ron, the feeder and the liable player pay 16,000 each.
+
+Delving deeper into the above example, let's look at multiple Yakuman being won at once. Let's say the hand is \textit{also} a Tsuuiisou~\pr{yaku}{Tsuuiisou}. On a Tsumo, the liable player -- who is the dealer -- pays 32,000 + 16,000 = 48,000, and everyone else pays 8,000. On a Ron from someone else, the liable player pays 16,000, and the feeder pays 48,000.
+
+One more thing to touch on, what if there are Honba bonuses for the hand? If the liable player is the \textit{only} one paying, they hold the entire burden of the Honba. So for a Single Yakuman Tsumo, the liable player pays 32,300. In the Double Yakuman Tsumo, they are are liable for only one, they pay 32,000 + 16,000 + 100 = 48,100, and everyone else pays 8,100. On a Ron, the feeder always pays the entire Honba bonus.
+
+% REVIEW: Describe the math
+% REVIEW: Honba Math
+\subsection{Calculating the Score}\label{core:ssec:calcs}
+
+Before introducing the score table, it is worth talking about the math done to create it. This assumes you have already dealt with the counting of Han, Fu, and Yakuman if any.
+
+\begin{enumerate}
+	\item First, calculate the base score of the hand using Han and Fu. Then consult the limit hand table for that many Han. The base score is the smaller of the two values. In case of counting Yakuman, each of them are worth 8,000 base points.
+	\[\text{base score} = \min\left(\;\text{fu} \times 4 \times 2^{\text{han}} \;\;,\;\; \text{limit}(\text{han})\;\right)\]
+	\[\text{limit}(\text{han}) = \begin{cases}\text{han} \le 5 & 2,000 \\ \text{han} = 6,7 & 3,000 \\ \text{han} = 8,9,10 & 4,000 \\ \text{han} = 11,12 & 6,000 \\ \text{han} \ge 13 & 8,000\end{cases}\]
+
+	\item Then using the base score, determine the actual score paid by each player. It is done by multiplying the base score by a number dependant on how the winning hand was made, and whether or not a player is the dealer or not in this point exchange. Then round to the next 100.
+	That multiplier is based on the following two principles:
+		\begin{itemize}
+		\item The dealer pays and wins double.
+		\item If you feed, you pay for everyone.
+	\end{itemize}
+	So on a non-dealer Tsumo, the non-dealers pay with \(k=1\), and the dealers pay with \(k=2\). On a non-dealer Ron, the player who fed pays with \(k=4\). On a dealer Tsumo, everyone pays with \(k=2\) and on a Ron the player who fed pays with \(k=6\)
+	\[\text{paid score} = \lceil\text{base score} \times k\rceil_{100}\]
+
+	\item Lastly, if there are any Bonus Points awarded \ar{ssec}{100-point-bonus}, add them now. Just like the above section, if you feed you pay for everyone for these Bonus Points.
+	So, if someone Rons with 1 Honba on the table. The feeder will pay 300 bonus points. If they Tsumo instead, everyone will pay 100 bonus points.
+\end{enumerate}
+
+To put \textit{all} of this math together. Let's score the following non-dealer hand that has declared Riichi with 2 Honba on the table with both Dora and Ura Dora indicators showing {\mahjong{6z}}: {\mahjong{234m34567p5567-8s}}
+
+This hand earns three Yaku on a Ron -- Riichi~\pr{yaku}{Riichi}, Tanyao~\pr{yaku}{Tanyao}, Pinfu~\pr{yaku}{Pinfu} -- for a total of 3 Han. To count its fu, we look at every block of the hand and how it won. Because this hand is Pinfu, we know that no other Fu beyond Fuutei~\pr{fu}{Fuutei} and Menzen~Ron~\pr{fu}{Menzen Ron} will apply for a total of 30 fu. This value doesn't need to be rounded so we continue to the next step.
+
+This gives us a base score of \(\min\left(\; 30 \times 4 \times 2^{3} \;,\; 2,000 \;\right) = \min\left(\; 960 \;,\; 2,000 \;\right) = 960\). Then we determine \(k\). It is a non-dealer Ron, so this is \(k = 1 + 1 + 2 = 4\). For a paid score of \(\lceil 960 \times 4 \rceil_{100} = \lceil 3840 \rceil_{100} = 3,900\). There is 1 Honba on the table, so we add 300 to this number for a total of 4,200.
+
+If they won by Tsumo instead this would add the Menzen~Tsumo~\pr{yaku}{Menzen Tsumo} yaku, and make our Fu counting only see Pindzumo~\pr{fu}{Pindzumo}. 4 Han 20 Fu. Base score of 1,280. We need to calculate for \(k=1, 2\) and that gets us 1,300 and 2,600 respectively. Adding the Honba Bonus gets us 1,400 and 2,700.
+
+With all this math, it is recommended to reference and use the following score table. It is the vastly easier form for most when learning, and the above math only serves to explain how these numbers came to be.
 
 \input{Core/Scoring/Resources/score-table.tex}
 
@@ -22,16 +83,18 @@ After determining the Han, and if needed Fu, consult the table in Figure~\ref{co
 
 At the end of the game, you will convert your scores to what will be called Match Points. Then you will apply bonuses and/or penalties based on your placement in the game. This gets the final match score that you will carry with you to your next game in the series.
 
-% TODO: TRIANGLE!!!
+% DONE: TRIANGLE!!!
 The procedure for doing it is as follows:
 \begin{enumerate}
 	\item Subtract your ending score from 30,000. This 30,000 is called the Return Score.
 	\item Then divide the resulting value by 1,000.
-	\item Then apply the Placement Bonus, also called Uma. In this case, it is \(+30/+10/-10/-30\).
-	\item Then apply the First Bonus, also called Oka. It is calculated as \(\frac{4\times(\text{Return Score} - \text{Start Score})}{1,000}\), in this ruleset that is \(+20\). As the name suggests, this applies only to first place.
+	\item Then apply the Placement Bonus, also called Uma. In this case, it is \(+30/+10/\minus10/\minus30\). Note the triangle here, this is used over a minus sign so it is not able to be tampered with on paper reports.
+	\item Then apply the First Bonus, also called Oka. It is calculated as the difference between start and return scores for all players divided by 1,000, in this ruleset that is \(+20\). As the name suggests, this applies only to first place.
+	\[\frac{4\times(\text{Return Score} - \text{Start Score})}{1,000}\]	
 \end{enumerate}
 
-To aid in this process, an additional match scoresheet is attached in Figure~\ref{core:fig:match}. It is recommended to use it for tabulating score after each Game to determine a winner in a four game series.
+% Link doesn't work for some reason???????
+To aid in this process, an additional match scoresheet is attached on Page \pageref{\rulesetprefix:fig:match}. It is recommended to use it for tabulating score after each Game to determine a winner in a four game series.
 
 To give an example of the above procedure:
 \begin{itemize}
@@ -44,6 +107,16 @@ To give an example of the above procedure:
 
 \input{Core/Scoring/Resources/match-scoresheet}
 
-% TODO: Write about the game scoresheet
+% REVIEW: Write about the game scoresheet
+\subsection{Hand by Hand Scores}\label{core:ssec:hand-scores}
+
+If you would like to keep track of the scores changing hand by hand, a sheet for that has been included here. In that left-most column you would put what hand you are in, how many Honba there are, and if there are any Riichi sticks left in the pot from the last hand. You would write it like ``E3 - 1 (1)'' if it is in the 3rd Dealership of East, with 2 Honba, and 1 leftover Riichi wager.
+
+In the right four columns, that is where you would write in the point gain and loss from players for a hand. Cross out that small ``R'' if that player did declare Riichi, be sure to add that stick to their losses.
+
+\input{Core/Scoring/Resources/game-scoresheet-snippet}
+
+At the bottom, you can find a small section for end of game scoring and the values that are used for that.
+
 \input{Core/Scoring/Resources/game-scoresheet}
 

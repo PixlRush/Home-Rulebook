@@ -1,0 +1,34 @@
+% Set Useful Params
+% Store value of \arraystretch
+\def\tempArraystretch{\arraystretch}
+\def\arraystretch{1.5}
+% Set width of column
+\setlength{\matchscorewidth}{0.7in}
+
+% Start Figure
+\begin{figure}[H]
+\centering
+
+\mjgSetPlayers{}{}{}{}
+
+\noindent
+\begin{tabularx}{\textwidth}[c]{
+    >{\centering\arraybackslash\noindent}X
+    |M|M|M|M|}
+    % \mjgHeaderRow{\textbf{East}}{\textbf{South}}{\textbf{West}}{\textbf{North}}
+    % \mjgHeaderRow{\playerE}{\playerS}{\playerW}{\playerN}\hline
+    % Starting Score & \mjgSScore & \mjgSScore & \mjgSScore & \mjgSScore \\\hline
+    % \hline
+    \multicolumn{5}{c}{...}\\
+    \textcolor{gray!50}{E3-0 (0)} & \textcolor{gray!50}{\mminus1,500} & \textcolor{gray!50}{\mminus1,500} & \textcolor{gray!50}{+500 \deposit} & \textcolor{gray!50}{+1,500}\\\hline
+    E3-1 (1) & +6,500 \deposit& \mminus1,400 & \mminus2,700 & \mminus1,400 \\\hline
+    \textcolor{gray!50}{E4-0 (0)} & \textcolor{gray!50}{\mminus32,000} & \textcolor{gray!50}{---} & \textcolor{gray!50}{+32,000 \deposit} & \textcolor{gray!50}{---}\\
+    \multicolumn{5}{c}{...}
+\end{tabularx}
+
+\end{figure}
+
+% Restore value of \arraystretch
+\def\arraystretch{\tempArraystretch}
+% Restore default value of matchscorewidth
+\setlength{\matchscorewidth}{0.7in} 

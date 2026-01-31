@@ -3,11 +3,20 @@
 
 \subsection{From the Discards}\label{core:ssec:discards}
 
-\subsubsection{Kuikae}\label{core:sssec:kuikae}
-% TODO: Write section
+\subsubsection{Kuikae}\label{core:sssec:Kuikae}
+% REVIEW: Write section
+
+Kuikae, or swap calling, is a rule which restricts what you may discard after making a call from the discards. It is based off of two fundamental ideals: You can't swap a tile in your hand for a copy of that tile in the discards, and you can't shift a run by calling to shift it down. These in turn lead to the following rules:
+\begin{enumerate}
+	\item When you make a call from the discards, the tile you choose from your hand to discard may \textit{not} be the same tile you just called.
+	\item When you call Chii~\pr{call}{Chii}, you may not discard a tile on the other end of the run you Chii-ed. For example, If you Chii {\mahjong{3'45s}} you can not discard {\mahjong{6s}}.
+\end{enumerate}
+
+In the rare case where after making a call, all of your discards would be illegal by kuikae, the call made this way is considered to be illegal. Take this example hand: {\mahjong{1123m-555'z-66'6z-7'77z}}. If you call Chii on either {\mahjong{1m}} or {\mahjong{4m}} you would have no legal discards, and the call is illegal.
 
 \call{Chii}{Chii}{チー}
 	{\symbalert May only be done from the player to your left\\
+	\upgradesto Must obey Kuikae~\pr{sssec}{Kuikae}\\
 	\symbnegate Superceded by Pon \pr{call}{Pon}, Kan \pr{call}{Kan}, and Ron \pr{decl}{Ron}\\
 	\symbnegate May not be done while there are no tiles left in the live wall}
 	{As the player to your left discards a tile, you may say ``Chii,'' reveal two tiles in your hand that form a run with the discarded tile, meld them, then discard a tile. See below for examples of Chiis.
@@ -15,6 +24,7 @@
 
 \call{Pon}{Pon}{ポン}
 	{\symbnegate Superceded by Ron \pr{decl}{Ron}\\
+	\upgradesto Must obey Kuikae~\pr{sssec}{Kuikae}\\
 	\symbnegate May not be done while there are no tiles left in the live wall\\
 	\upgradesto Upgrades into Kakan \pr{call}{Kakan}}
 	{As any player discards a tile, you may say ``Pon,'' reveal two tiles in your hand that form a set with the discarded tile, meld them, then discard a tile. Please ensure the tile you grab and rotated sideways is placed correctly for where you got it from. See examples of Pons below.
@@ -23,6 +33,7 @@
 \call{Kan}{Kan}{\ruby{明}{みん}\ruby{槓}{カン}}
 	{\symbnegate Superceded by Ron \pr{decl}{Ron}\\
 	\symbnegate May not be done while there are no tiles left in the live wall\\
+	\upgradesto Must obey Kuikae~\pr{sssec}{Kuikae}\\
 	\upgradestoother Enables Rinshan Kaihou \pr{yaku}{Rinshan Kaihou}}
 	{As any player discards a tile, you may say ``Kan,'' reveal three tiles in your hand that form a set with the discarded tile, meld them, draw a tile from the dead wall, reveal a new Dora indicator, then discard a tile. Please ensure the tile you grab and rotated sideways is placed correctly for where you got it from. See examples of Kans below.
 	\begin{center}{From the player on your left: \mahjong{5'505m}\\ From the player across from you: \mahjong{05'55p}/\mahjong{055'5p}\\ From the player to your right: \mahjong{5550's}}\end{center}}

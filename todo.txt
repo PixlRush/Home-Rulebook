@@ -1,6 +1,6 @@
 --== TODO (7) ==--
 ./Core/Gameplay/gameplay.tex:10:% TODO: Diagrams?
-./Core/Gameplay/gameplay.tex:23:% TODO: Diagram?
+./Core/Gameplay/gameplay.tex:25:% TODO: Diagram?
 ./Core/Gameplay/hand.tex:34:% TODO: Write this section
 ./Core/Scoring/bonus.tex:6:% TODO: Link to procedure for dora
 ./Core/Scoring/bonus.tex:21:% TODO: Link to procedure for Honba

@@ -1,7 +1,6 @@
---== TODO (5) ==--
-./Core/Gameplay/hand.tex:34:% TODO: Write this section
-./Core/Scoring/bonus.tex:6:% TODO: Link to procedure for dora
-./Core/Scoring/bonus.tex:21:% TODO: Link to procedure for Honba
+--== TODO (4) ==--
+./Core/Gameplay/hanchan.tex:19:% TODO: Write Section
+./Core/Scoring/bonus.tex:22:% TODO: Link to procedure for Honba
 ./Core/Scoring/fu.tex:2:% TODO: Write Upgrade Chain
 ./Core/Equipment/other.tex:3:% TODO: Write about Utility
 
@@ -31,8 +30,9 @@
 ./Core/Equipment/tiles.tex:1:% REVIEW: Write section
 ./Core/Equipment/other.tex:1:% REVIEW: Write section
 
---== DONE (12) ==--
+--== DONE (13) ==--
 ./Core/Gameplay/declarations.tex:6:% DONE: Ankan Example
+./Core/Scoring/bonus.tex:6:% DONE: Link to procedure for dora
 ./Core/Scoring/fu.tex:27:% DONE: Kokushi is 2 Fu
 ./Core/Scoring/fu.tex:33:% DONE: Jantou instead of Toitsu?
 ./Core/Scoring/fu.tex:49:% DONE: Jantou instead of Toitsu?

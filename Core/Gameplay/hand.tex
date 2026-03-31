@@ -26,9 +26,31 @@ Below is a diagram showing how exactly each player will draw their hands on the 
 
 \subsection{Setting up the Dead Wall}\label{core:ssec:dead-wall}
 
-While this is all going on, the player whose wall was broken should prepare the dead wall. In order to do so, they must drop down the Rinshan Tile, and reveal the first Dora indicator. The below diagram shows you how to do so. The Dora indicator is the top tile of the third stack in, counting counterclockwise from the break, and the Rinshan Tile is the top tile in the first stack in. We drop the Rinshan Tile to ensure it doesn't accidentally get knocked over during the game. This tile is very important, because it will be the tile that is drawn after calling a Kan \pr{call}{Kan}. In addition to that, winning by drawing it after a Kan gives you the Rinshan Kaihou yaku \pr{yaku}{Rinshan Kaihou}. So we want to make sure that that tile is not accidentally exposed.
+After the hands have been dealt, the player whose wall was broken should do two things to the dead wall: Reveal the initial dora indicator, and drop down the rinshan tile.
+
+To reveal the initial dora indicator, take it in two fingers, and rotate it so its front side is facing upwards. This tile is shown in the below diagram with an arrow showing it has been flipped.
+
+Dropping down the Rinshan Tile makes sure that one of the most important tiles is not accidentally revealed by being knocked down during the game. It is shown with a dashed outline, and an arrow pointing to where it is moved to in the below diagram. This tile will be the tile that is drawn after calling a Kan \prss{call}{Kan}{Kakan}{Ankan}, and winning on that replacement draw gives you the Rinshan Kaihou yaku \pr{yaku}{Rinshan Kaihou}, so we want to ensure that this tile is not accidentally exposed.
+
+See the following diagram for what the dead wall should look like after being set up correctly:
 
 \input{Resources/Diagrams/setup-dead-wall}
 
-\subsection{Revealing Dora}\label{core:ssec:revealing-dora}
-% TODO: Write this section
+\subsubsection{Revealing Kan Dora}\label{core:sssec:revealing-kan-dora}
+
+During the hand, whenever a Kan is called \prss{call}{Kan}{Kakan}{Ankan} a new dora indicator will be revealed. This is a part of setting up and manipulating the dead wall and should be done by the player with the Dead Wall in front of them. Just like above, it is recommended to use two fingers to flip the new dora indicator.
+
+In the below figure, you will see all the tiles labelled with a number. This is the number of kans needed to cause that tile to be required to be used. The `0's are all handled above. When a new Kan is made the following things happen:
+
+\begin{enumerate}
+	\item Immediately reveal the next dora indicator tile.
+	\item The player who called Kan draws the next replacement tile
+	\item Should the Rinshan tile need to be moved down, move it down
+	\item The end of the live wall moves back one tile
+\end{enumerate}
+
+So once the first Kan is called, the kan dora indicator labelled `1' is flipped, then the caller draws the kan replacement tile labelled `1'. After which the calling player continues their turn as normal.
+
+\input{Resources/Diagrams/dead-wall}
+
+\input{Resources/Diagrams/dead-wall-prog}

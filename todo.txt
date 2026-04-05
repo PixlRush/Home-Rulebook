@@ -1,12 +1,11 @@
---== TODO (4) ==--
+--== TODO (3) ==--
 ./Core/Gameplay/hanchan.tex:19:% TODO: Write Section
 ./Core/Scoring/bonus.tex:22:% TODO: Link to procedure for Honba
-./Core/Scoring/fu.tex:2:% TODO: Write Upgrade Chain
 ./Core/Equipment/other.tex:3:% TODO: Write about Utility
 
 --== IN-PROGRESS (0) ==--
 
---== REVIEW (22) ==--
+--== REVIEW (24) ==--
 ./Core/Gameplay/calls.tex:1:% REVIEW: Write Section
 ./Core/Gameplay/calls.tex:7:% REVIEW: Write section
 ./Core/Gameplay/declarations.tex:1:% REVIEW: Write Section
@@ -18,6 +17,8 @@
 ./Core/Gameplay/hanchan.tex:1:% REVIEW: Write Section
 ./Core/Scoring/bonus.tex:1:% REVIEW: Write Section
 ./Core/Scoring/fu.tex:1:% REVIEW: Write Section
+./Core/Scoring/fu.tex:2:% REVIEW: Write Upgrade Chain
+./Core/Scoring/fu.tex:108:% REVIEW: Remove and fold into fuutei?
 ./Core/Scoring/scoring.tex:1:% REVIEW: Write Section
 ./Core/Scoring/scoring.tex:7:% REVIEW: Pao
 ./Core/Scoring/scoring.tex:8:% REVIEW: Yakuman Edge Case
@@ -35,7 +36,7 @@
 ./Core/Scoring/bonus.tex:6:% DONE: Link to procedure for dora
 ./Core/Scoring/fu.tex:27:% DONE: Kokushi is 2 Fu
 ./Core/Scoring/fu.tex:33:% DONE: Jantou instead of Toitsu?
-./Core/Scoring/fu.tex:49:% DONE: Jantou instead of Toitsu?
+./Core/Scoring/fu.tex:50:% DONE: Jantou instead of Toitsu?
 ./Core/Scoring/scoring.tex:2:% DONE: Make use of ars
 ./Core/Scoring/scoring.tex:86:% DONE: TRIANGLE!!!
 ./Core/Scoring/yaku.tex:6:% DONE: Link to Declaration

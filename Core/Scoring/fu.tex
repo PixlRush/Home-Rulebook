@@ -1,11 +1,11 @@
 % REVIEW: Write Section
-% TODO: Write Upgrade Chain
+% REVIEW: Write Upgrade Chain
 \section{Fu}\label{core:sec:fu}
 
 \subsection{2 Fu}\label{core:ssec:2-fu}
 
 \fu{Pon}{Open Simples Triplet}{\ruby{中張牌}{チュウチャンパイ}\ruby{明刻}{みんこー}}
-	{}
+	{\upgradesto Upgrades into Kan~\pr{fu}{Kan}}
 	{Have an Open Triplet of any non-orphan tile. }
 
 \fu{Isshu Machi}{Single Tile Wait}{\ruby{一種}{いっしゅ}\ruby{待}{ま}ち}
@@ -32,7 +32,8 @@
 
 % DONE: Jantou instead of Toitsu?
 \fu{Yakuhai Jantou}{Valued Pair}{\ruby{役牌}{やくはい}\ruby{雀頭}{じゃんとう}}
-	{\upgradesto Upgrades to Renfuu~Jantou~\pr{fu}{Renfuu Jantou}}
+	{\upgradesto Upgrades into Yaochuuhai~Pon~\pr{fu}{Yaochuuhai Pon}\\
+	\upgradesto Upgrades to Renfuu~Jantou~\pr{fu}{Renfuu Jantou}}
 	{The pair in your hand is a tile that fits a Yakuhai Yaku~\pr{yaku}{Yakuhai}.}
 
 \fu{Tsumo}{Win by Self-Draw}{\ruby{自摸}{つも}\ruby{上}{あ}がり}
@@ -48,26 +49,32 @@
 
 % DONE: Jantou instead of Toitsu?
 \fu{Renfuu Jantou}{Double Wind Pair}{\ruby{連風}{れんプー}\ruby{雀頭}{じゃんとう}}
-	{\upgradesfrom Upgrades from Yakuhai~Jantou~\pr{fu}{Yakuhai Jantou}}
+	{\upgradesfrom Upgrades from Yakuhai~Jantou~\pr{fu}{Yakuhai Jantou}\\
+	\upgradesto Upgrades to Yaochuuhai~Ankou~\pr{fu}{Yaochuuhai Ankou}}
 	{The pair in your hand is a tile that fits the Renfuu~Yaku~\pr{yaku}{Renfuu}.}
 
 \fu{Ankou}{Closed Simples Triplet}{\ruby{中張牌}{チュウチャンパイ}\ruby{暗刻}{あんこー}}
-	{}
+	{\upgradesto Upgrades into Kan~\pr{fu}{Kan}\\
+	\upgradesto Upgrades into Ankan~\pr{fu}{Ankan}}
 	{Have a Closed Triplet of any non-orphan tile.}
 
 \fu{Yaochuuhai Pon}{Open Orphan Triplet}{\ruby{幺九牌}{ヤオチューハイ}\ruby{明刻}{みんこー}}
-	{}
+	{\upgradesfrom Upgrades from Yakuhai~Jantou~\pr{fu}{Yakuhai Jantou}\\
+	\upgradesto Upgrades into Yaochuuhai Kan~\pr{fu}{Yaochuuhai Kan}}
 	{Have an Open Triplet of any orphan tile.}
 
 
 \subsection{8 Fu}\label{core:ssec:8-fu}
 
 \fu{Yaochuuhai Ankou}{Closed Orphan Triplet}{\ruby{幺九牌}{ヤオチューハイ}\ruby{暗刻}{あんこー}}
-	{}
+	{\upgradesfrom Upgrades from Renfuu~Jantou~\pr{fu}{Renfuu Jantou}\\
+	\upgradesto Upgrades into Yaochuuhai~Kan~\pr{fu}{Yaochuuhai Kan}\\
+	\upgradesto Upgrades into Yaochuuhai~Ankan~\pr{fu}{Yaochuuhai Ankan}}
 	{Have a Closed Triplet of any orphan tile.}
 
 \fu{Kan}{Open Simples Quad}{\ruby{明槓}{みんかん}}
-	{}
+	{\upgradesfrom Upgrades from Pon~\pr{fu}{Pon}\\
+	\upgradesfrom Upgrades from Ankou~\pr{fu}{Ankou}}
 	{Have an Open Quad of any non-orphan tile.}
 
 
@@ -82,11 +89,12 @@
 \subsection{16 Fu}\label{core:ssec:16-fu}
 
 \fu{Ankan}{Closed Simples Quad}{\ruby{中張牌}{チュウチャンパイ}\ruby{暗槓}{あんかん}}
-	{}
+	{\upgradesfrom Upgrades from Ankou~\pr{fu}{Ankou}}
 	{Have a Closed Quad of any non-orphan tile.}
 
 \fu{Yaochuuhai Kan}{Open Orphan Quad}{\ruby{幺九牌}{ヤオチューハイ}\ruby{明槓}{みんかん}}
-	{}
+	{\upgradesfrom Upgrades from Yaochuuhai~Pon~\pr{fu}{Yaochuuhai Pon}\\
+	\upgradesfrom Upgrades from Yaochuuhai~Ankou~\pr{fu}{Yaochuuhai Ankou}}
 	{Have an Open Quad of any orphan tile.}
 
 
@@ -97,6 +105,7 @@
 	\upgradesto Stacks with Menzen~Ron~\pr{fu}{Menzen Ron}}
 	{Win a hand. This fu is almost always added to a winning hand.}
 
+% REVIEW: Remove and fold into fuutei?
 \fu{Pindzumo}{Pinfu Tsumo}{\ruby{平和}{ピンフ}\ruby{自摸}{ツモ}\ruby{上}{あ}がり}
 	{\symbnegate Negates all other fu, including Fuutei~\pr{fu}{Fuutei} \\
 	\closedhand \\
@@ -116,5 +125,5 @@
 \subsection{32 Fu}\label{core:ssec:32-fu}
 
 \fu{Yaochuuhai Ankan}{Closed Orphan Quad}{\ruby{幺九牌}{ヤオチューハイ}\ruby{暗槓}{あんかん}}
-	{}
+	{\upgradesfrom Upgrades from Yaochuuhai~Ankou~\pr{fu}{Yaochuuhai Ankou}}
 	{Have a Closed Quad of any orphan tile.}
